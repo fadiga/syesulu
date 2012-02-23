@@ -1,0 +1,8 @@
+I- gestion des poussins
+	1, enregistrement des poussins dans le poussinière(Date d'arriver, nbre de P, type P)
+	1', Enregistrement des alertes pour les vaccins.
+	2, Suivi de P(date, mortalité de P, poids de P)
+	2', Transfere des poussins les poulallés(date, le nbre, le nom du poulallé)
+3, Ramasage et stockage d'œuf / jour(nbre d'œuf, nom poulallé, nom magasin, date)
+4, Rappels(transfère, reforme, commande de nouveau poussin)
+3, Gestion des aliments(nom , qte, date, produit, nom du magasin)

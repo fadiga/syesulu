@@ -1,0 +1,10 @@
+*.pyc
+*.pdf
+*.orig
+*.db
+*.sqlite
+.*
+*~
+*.xls
+*.exe
+*.dll

@@ -1,0 +1,13 @@
+Fonctionnalités:
+================
+
+1- enregistrement des sujets
+2- enregistrement des vaccins 
+3- enregistrement du stock d'aliment
+4- enregistrement de depenses
+5- suivi des sujets(depuis leur arrivé jusqu'à leur reforme
+6- suivi de la consomation journalière de l'aliment
+7- suivi de la production des oeufs
+8- enregistrement de bloc
+9- enregistrement de magasin
+
