@@ -9,6 +9,7 @@ import gettext_windows
 
 from PyQt4 import QtGui
 
+from database import setup
 from ui.mainwindow import MainWindow
 from ui.window import F_Window
 
@@ -17,7 +18,7 @@ def main():
 
     gettext_windows.setup_env()
     locale.setlocale(locale.LC_ALL, '')
-    gettext.install('g_stock', localedir='locale', unicode=True)
+    gettext.install('soulou', localedir='locale', unicode=True)
 
     app = QtGui.QApplication(sys.argv)
     window = MainWindow()
