@@ -6,7 +6,7 @@ from PyQt4 import QtGui, QtCore
 
 from common import F_Widget
 from dashboard import DashbordViewWidget
-from magasin import MagasinViewWidget
+from magasins import MagasinViewWidget
 from report_period import ReportViewWidget
 from poussin import PoussinViewWidget
 

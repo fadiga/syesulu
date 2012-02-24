@@ -8,7 +8,8 @@ from PyQt4 import QtGui, QtCore
 
 from model import *
 from dashboard import DashbordViewWidget
-from magasin import MagasinViewWidget
+from magasins import MagasinViewWidget
+from produits import ProduitViewWidget
 from menubar import MenuBar
 from statusbar import GStatusBar
 
@@ -26,6 +27,8 @@ class MainWindow(QtGui.QMainWindow):
                                                     _(u"Exit"), self.goto_exit)
         self.toolbar.addSeparator()
         self.toolbar.addAction(_(u"Dashboard"), self.accueil)
+        self.toolbar.addSeparator()
+        self.toolbar.addAction(_(u"Produit"), self.goto_produit)
         self.addToolBar(self.toolbar)
 
         self.menubar = MenuBar(self)
@@ -42,6 +45,10 @@ class MainWindow(QtGui.QMainWindow):
         self.setWindowTitle(u"Accueil")
         self.change_context(DashbordViewWidget)
 
+    def goto_produit(self):
+        self.setWindowTitle(_(u"Products"))
+        self.change_context(ProduitViewWidget)
+
     def change_context(self, context_widget, *args, **kwargs):
 
         # instanciate context
@@ -56,7 +63,7 @@ class MainWindow(QtGui.QMainWindow):
         d.setWindowOpacity(0.97)
         d.exec_()
 
-    def open_Dock(self, dock, modal=False, *args, **kwargs):
-        d = dock(parent=self, *args, **kwargs)
-        d.setModal(modal)
-        d.exec_()
+    # def open_Dock(self, dock, modal=False, *args, **kwargs):
+    #     d = dock(parent=self, *args, **kwargs)
+    #     d.setModal(modal)
+    #     d.exec_()
