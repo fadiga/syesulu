@@ -8,6 +8,7 @@ from PyQt4 import QtGui, QtCore
 
 from model import *
 from dashboard import DashbordViewWidget
+from magasin import MagasinViewWidget
 from menubar import MenuBar
 from statusbar import GStatusBar
 

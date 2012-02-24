@@ -5,6 +5,10 @@
 from PyQt4 import QtGui, QtCore
 
 from common import F_Widget
+from dashboard import DashbordViewWidget
+from magasin import MagasinViewWidget
+from report_period import ReportViewWidget
+from poussin import PoussinViewWidget
 
 
 class MenuBar(QtGui.QMenuBar, F_Widget):
@@ -21,7 +25,6 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
 
         export.addAction(_(u"In an Excel file"),\
                                         self.goto_export_excel)
-        # Exit
         # Exit
         exit_ = QtGui.QAction(_(u"Exit"), self)
         exit_.setShortcut("Ctrl+Q")
@@ -41,6 +44,13 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
                                             self.addstore)
         goto_.addAction(magasin)
 
+        # poussin
+        poussin = QtGui.QAction(_(u"nouveau poussin"), self)
+        poussin.setShortcut("Ctrl+L")
+        self.connect(poussin, QtCore.SIGNAL("triggered()"),
+                                            self.addpoussin)
+        goto_.addAction(poussin)
+
         # Rapport periodique
         rap_p = QtGui.QAction(_(u"Periodic report"), self)
         rap_p.setShortcut("Ctrl+P")
@@ -54,6 +64,7 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
         self.connect(rap_inv, QtCore.SIGNAL("triggered()"),
                                             self.goto_inventaire)
         goto_.addAction(rap_inv)
+
         #Menu Aide
         help_ = self.addMenu(_(u"help"))
         help_.addAction(QtGui.QIcon('images/help.png'), _("help"),
@@ -63,21 +74,26 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
 
     #Inventaire
     def goto_inventaire(self):
-        passs
+        pass
+
+    #addpoussin
+    def addpoussin(self):
+        self.change_main_context(PoussinViewWidget)
+
 
     #Rapport periodique.
     def report_period(self):
-        passs
+         self.change_main_context(ReportViewWidget)
 
     def addstore(self):
-        passs
+        self.change_main_context(MagasinViewWidget)
 
     #Export the database.
     def goto_export_db(self):
         pass
 
     def goto_export_excel(self):
-        pass
+        self.change_main_context(DashbordViewWidget)
 
     #Aide
     def goto_help(self):
