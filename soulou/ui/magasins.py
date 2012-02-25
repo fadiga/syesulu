@@ -36,6 +36,8 @@ class MagasinViewWidget(F_Widget):
         editbox.addWidget(self.name, 1, 0)
         editbox.addWidget(QtGui.QLabel((_(u"Quantity maxi"))), 0, 1)
         editbox.addWidget(self.qte_maxi_stok, 1, 1)
+        editbox.setColumnStretch(0, 2)
+        editbox.setColumnStretch(3, 2)
         butt = Button_save(_(u"Save"))
         butt.clicked.connect(self.add_operation)
         editbox.addWidget(butt, 1, 2)
@@ -55,6 +57,7 @@ class MagasinViewWidget(F_Widget):
             magasin.qte_maxi_stok = int(self.qte_maxi_stok.text())
             magasin.save()
             self.name.clear()
+            self.qte_maxi_stok.clear()
             self.stori_table.refresh_()
             raise_success(_(u"Confirmation"), _(u"Registered operation"))
         else:

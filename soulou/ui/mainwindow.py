@@ -7,6 +7,7 @@ import sys
 from PyQt4 import QtGui, QtCore
 
 from model import *
+from gstockreports import G_reportViewWidget
 from dashboard import DashbordViewWidget
 from magasins import MagasinViewWidget
 from produits import ProduitViewWidget
@@ -29,6 +30,9 @@ class MainWindow(QtGui.QMainWindow):
         self.toolbar.addAction(_(u"Dashboard"), self.accueil)
         self.toolbar.addSeparator()
         self.toolbar.addAction(_(u"Produit"), self.goto_produit)
+        self.toolbar.addSeparator()
+        self.toolbar.addAction(_(u"Management reports"), \
+                                                self.goto_gestion_rapport)
         self.addToolBar(self.toolbar)
 
         self.menubar = MenuBar(self)
@@ -48,6 +52,11 @@ class MainWindow(QtGui.QMainWindow):
     def goto_produit(self):
         self.setWindowTitle(_(u"Products"))
         self.change_context(ProduitViewWidget)
+        
+    def goto_gestion_rapport(self):
+        self.setWindowTitle(_(u"Management Reports"))
+        self.change_context(G_reportViewWidget)
+
 
     def change_context(self, context_widget, *args, **kwargs):
 
