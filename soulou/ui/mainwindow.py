@@ -11,6 +11,8 @@ from gstockreports import G_reportViewWidget
 from dashboard import DashbordViewWidget
 from magasins import MagasinViewWidget
 from produits import ProduitViewWidget
+from poussin import PoussinViewWidget
+from poulailler import PoulaillerViewWidget
 from menubar import MenuBar
 from statusbar import GStatusBar
 
@@ -33,6 +35,12 @@ class MainWindow(QtGui.QMainWindow):
         self.toolbar.addSeparator()
         self.toolbar.addAction(_(u"Management reports"), \
                                                 self.goto_gestion_rapport)
+        self.toolbar.addSeparator()
+        self.toolbar.addAction(_(u"Nouveau poulailler"), \
+                                                self.goto_poulailler)
+        self.toolbar.addSeparator()
+        self.toolbar.addAction(_(u"Nouveau poussin"), \
+                                                self.goto_poussin)
         self.addToolBar(self.toolbar)
 
         self.menubar = MenuBar(self)
@@ -52,10 +60,18 @@ class MainWindow(QtGui.QMainWindow):
     def goto_produit(self):
         self.setWindowTitle(_(u"Products"))
         self.change_context(ProduitViewWidget)
-        
+
     def goto_gestion_rapport(self):
         self.setWindowTitle(_(u"Management Reports"))
         self.change_context(G_reportViewWidget)
+
+    def goto_poussin(self):
+        self.setWindowTitle(_(u"Management Poussin"))
+        self.change_context(PoussinViewWidget)
+
+    def goto_poulailler(self):
+        self.setWindowTitle(_(u"Management Poulailler"))
+        self.change_context(PoulaillerViewWidget)
 
 
     def change_context(self, context_widget, *args, **kwargs):

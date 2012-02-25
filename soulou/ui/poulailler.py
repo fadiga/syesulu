@@ -2,11 +2,12 @@
 # -*- coding: utf-8 -*-
 # maintainer: alou
 
+from datetime import datetime
 from PyQt4 import QtGui, QtCore
 
 from database import Poulailler
 from common import (F_Widget, F_PageTitle, F_TableWidget, F_BoxTitle,
-                    Button_save)
+                    Button_save, FormatDate)
 from util import raise_success, raise_error
 
 
@@ -40,7 +41,9 @@ class PoulaillerViewWidget(F_Widget):
         self.num = QtGui.QLineEdit()
         self.nbr_sujet = QtGui.QLineEdit()
         self.stock_maxi = QtGui.QLineEdit()
-        self.date = QtGui.QDateEdit()
+        self.date = FormatDate(QtCore.QDate.currentDate())
+        self.date.setFont(QtGui.QFont("Courier New", 10, True))
+
         self.num.setValidator(QtGui.QIntValidator())
         editbox.addWidget(QtGui.QLabel((_(u"Type"))), 0, 0)
         editbox.addWidget(self.type_, 1, 0)
@@ -66,13 +69,19 @@ class PoulaillerViewWidget(F_Widget):
 
     def add_poulailler(self):
         ''' add operation '''
+        date_ = self.date.text()
+        day, month, year = date_.split('/')
+        dt = datetime.now()
+        datetime_ = datetime(int(year), int(month), int(day),
+                             int(dt.hour), int(dt.minute), int(dt.second),
+                             int(dt.microsecond))
         if unicode(self.num.text()) != "":
             poussin = Poulailler()
             poussin.type_ = int(self.type_.currentIndex())
             poussin.num = int(self.num.text())
             poussin.nbr_sujet = int(self.nbr_sujet.text())
             poussin.stock_maxi = int(self.stock_maxi.text())
-            poussin.date = self.date.text()
+            poussin.date = datetime_
             poussin.save()
             self.poussin_table.refresh_()
             raise_success(_(u"Confirmation"), _(u"Registered operation"))

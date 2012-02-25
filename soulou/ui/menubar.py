@@ -45,20 +45,6 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
                                             self.addstore)
         goto_.addAction(magasin)
 
-        # poulailler
-        poulailler = QtGui.QAction(_(u"nouveau poulailler"), self)
-        poulailler.setShortcut("Ctrl+L")
-        self.connect(poulailler, QtCore.SIGNAL("triggered()"),
-                                            self.addpoulailler)
-        goto_.addAction(poulailler)
-
-        # poussin
-        poussin = QtGui.QAction(_(u"nouveau poussin"), self)
-        poussin.setShortcut("Ctrl+L")
-        self.connect(poussin, QtCore.SIGNAL("triggered()"),
-                                            self.addpoussin)
-        goto_.addAction(poussin)
-
         # Rapport periodique
         rap_p = QtGui.QAction(_(u"Periodic report"), self)
         rap_p.setShortcut("Ctrl+P")
@@ -83,15 +69,6 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
     #Inventaire
     def goto_inventaire(self):
         pass
-
-    #addpoussin
-    def addpoussin(self):
-        self.change_main_context(PoussinViewWidget)
-
-    #addpoulailler
-    def addpoulailler(self):
-        self.change_main_context(PoulaillerViewWidget)
-
 
     #Rapport periodique.
     def report_period(self):

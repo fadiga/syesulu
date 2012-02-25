@@ -2,10 +2,11 @@
 # -*- coding: utf-8 -*-
 # maintainer: alou
 
-from PyQt4 import QtGui
+from datetime import datetime
+from PyQt4 import QtGui, QtCore
 from database import *
 from common import (F_Widget, F_PageTitle, F_TableWidget, F_BoxTitle,
-                    Button_save)
+                    Button_save, FormatDate)
 from util import raise_success, raise_error
 from tabpane import tabbox
 
@@ -31,12 +32,16 @@ class PoussinViewWidget(F_Widget):
 
         self.race = QtGui.QLineEdit()
         self.nbre_total_poussin = QtGui.QLineEdit()
-        self.date_arriver = QtGui.QDateEdit()
+        self.date_arriver = FormatDate(QtCore.QDate.currentDate())
+        self.date_arriver.setFont(QtGui.QFont("Courier New", 10, True))
 
-        liste_type = [p.__unicode__() for p in Poulailler.all()]
+        #Combobox widget
+        self.liste_poulailler = Poulailler.all()
         self.poulailler = QtGui.QComboBox()
-        for index in liste_type:
-            self.poulailler.addItem(u'%(type)s' % {'type': index})
+        for index in xrange(0, len(self.liste_poulailler)):
+            op = self.liste_poulailler[index]
+            sentence = _(u"%(libelle)s") % {'libelle': op.full_name()}
+            self.poulailler.addItem(sentence, QtCore.QVariant(op.id))
 
         butt = Button_save(_(u"Save"))
         self.nbre_total_poussin.setValidator(QtGui.QIntValidator())
@@ -61,13 +66,20 @@ class PoussinViewWidget(F_Widget):
     def add_poussin(self):
         ''' add operation '''
 
+        date_ = self.date_arriver.text()
+        day, month, year = date_.split('/')
+        dt = datetime.now()
+        poulailler = self.liste_poulailler[self.poulailler.currentIndex()]
+        datetime_ = datetime(int(year), int(month), int(day),
+                             int(dt.hour), int(dt.minute), int(dt.second),
+                             int(dt.microsecond))
+
         if unicode(self.nbre_total_poussin.text()) != "":
             ps = PsArrivage()
             ps.race = unicode(self.race.text())
             ps.nbre_total_poussin = int(self.nbre_total_poussin.text())
-            ps.date_arriver = 800
-            print self.poulailler.currentIndex()
-            ps.poulailler = 1
+            ps.date_arriver = datetime_
+            ps.poulailler = poulailler
             ps.save()
             self.poussin_table.refresh_()
             raise_success(_(u"Confirmation"), _(u"Registered operation"))
@@ -79,7 +91,7 @@ class PoussinTableWidget(F_TableWidget):
 
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
-        self.header = [_(u"Nombre de sujet"), _(u"Poulailler"), _('Race'), \
+        self.header = [_(u"Race"), _(u"Poulailler"), _('Nombre de sujet'), \
                        _('Date')]
         self.set_data_for()
         self.refresh(True)
@@ -92,7 +104,7 @@ class PoussinTableWidget(F_TableWidget):
 
     def set_data_for(self):
         try:
-            self.data = [(ps.race, ps.nbre_total_poussin, ps.date_arriver, \
-                      ps.poulailler) for ps in PsArrivage.all()]
+            self.data = [(ps.race, ps.poulailler, \
+                      ps.nbre_total_poussin, ps.date_arriver) for ps in PsArrivage.all()]
         except:
             pass
