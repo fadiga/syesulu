@@ -9,6 +9,7 @@ from dashboard import DashbordViewWidget
 from magasins import MagasinViewWidget
 from report_period import ReportViewWidget
 from poussin import PoussinViewWidget
+from poulailler import PoulaillerViewWidget
 
 
 class MenuBar(QtGui.QMenuBar, F_Widget):
@@ -43,6 +44,13 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
         self.connect(magasin, QtCore.SIGNAL("triggered()"),
                                             self.addstore)
         goto_.addAction(magasin)
+
+        # poulailler
+        poulailler = QtGui.QAction(_(u"nouveau poulailler"), self)
+        poulailler.setShortcut("Ctrl+L")
+        self.connect(poulailler, QtCore.SIGNAL("triggered()"),
+                                            self.addpoulailler)
+        goto_.addAction(poulailler)
 
         # poussin
         poussin = QtGui.QAction(_(u"nouveau poussin"), self)
@@ -79,6 +87,10 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
     #addpoussin
     def addpoussin(self):
         self.change_main_context(PoussinViewWidget)
+
+    #addpoulailler
+    def addpoulailler(self):
+        self.change_main_context(PoulaillerViewWidget)
 
 
     #Rapport periodique.

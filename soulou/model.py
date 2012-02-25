@@ -76,8 +76,8 @@ class Poulailler(BaseModel):
 
     TYPE_POUL = 0 # blank created
     TYPE_POUS = 1 # started edition
-    TYPE= ((TYPE_POUS, u"poulailler"),
-                (TYPE_POUL, u"poussinière"),)
+    TYPE= ((TYPE_POUL, u"poussinière"),
+                (TYPE_POUS, u"poulailler"),)
 
     type_ = peewee.IntegerField(default=TYPE_POUS)
     num = peewee.IntegerField(default=0)
@@ -87,7 +87,11 @@ class Poulailler(BaseModel):
 
     def __unicode__(self):
         return (u"%(type_)s %(num)s") % \
-                {'type_': self.type_, 'num': self.num}
+                {'type_': self.TYPE[self.type_][1], 'num': self.num}
+
+    def full_name(self):
+        return (u"%(type_)s %(num)s") % \
+                {'type_': self.TYPE[self.type_][1], 'num': self.num}
 
 
 class PsArrivage(BaseModel):
@@ -96,7 +100,7 @@ class PsArrivage(BaseModel):
     race = peewee.CharField(max_length=50)
     nbre_total_poussin = peewee.IntegerField(default=0)
     date_arriver = peewee.DateTimeField(default=0)
-    poulailler = peewee.ForeignKeyField(Poulailler, unique=True)
+    poulailler = peewee.ForeignKeyField(Poulailler)
 
     def __unicode__(self):
         return (u"%(nbre_total_poussin)s %(date_arriver)s") % \
