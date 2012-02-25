@@ -33,7 +33,7 @@ class Produit(BaseModel):
     unite = peewee.CharField(max_length=50)
 
     def __unicode__(self):
-        return (u"%(libelle)s (%(unite)sp/c)" % \
+        return (u"%(libelle)s (%(unite)s)" % \
                 {'libelle': self.libelle, 'unite': self.unite})
 
 

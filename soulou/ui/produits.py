@@ -27,7 +27,12 @@ class ProduitViewWidget(F_Widget):
         tablebox.addWidget(self.table_op)
 
         self.libelle = QtGui.QLineEdit()
-        self.unite = QtGui.QLineEdit()
+
+        self.liste_unite = [_(u"kg"), _(u"oeuf"), _(u"litre")]
+        #Combobox widget
+        self.box_unite = QtGui.QComboBox()
+        for index in self.liste_unite:
+            self.box_unite.addItem(u'%(unite)s' % {'unite': index})
 
         formbox = QtGui.QVBoxLayout()
         editbox = QtGui.QGridLayout()
@@ -35,10 +40,12 @@ class ProduitViewWidget(F_Widget):
 
         editbox.addWidget(QtGui.QLabel((_(u"Designation"))), 0, 0)
         editbox.addWidget(self.libelle, 1, 0)
-        editbox.addWidget(QtGui.QLabel((_(u"Number of rooms"))), 0, 1)
-        editbox.addWidget(self.unite, 1, 1)
+        editbox.addWidget(QtGui.QLabel((_(u"Unite"))), 0, 1)
+        editbox.addWidget(self.box_unite, 1, 1)
         butt = Button_save(_(u"Save"))
         butt.clicked.connect(self.add_operation)
+        editbox.setColumnStretch(0, 2)
+        editbox.setColumnStretch(3, 5)
         editbox.addWidget(butt, 1, 2)
 
         formbox.addLayout(editbox)
@@ -48,11 +55,12 @@ class ProduitViewWidget(F_Widget):
 
     def add_operation(self):
         ''' add operation '''
+        unite_ = self.liste_unite[self.box_unite.currentIndex()]
         if unicode(self.libelle.text()) != "":
-            if unicode(self.unite.text()) != "":
+            if unicode(unite_) != "":
                 produit = Produit()
                 produit.libelle = unicode(self.libelle.text())
-                produit.unite = unicode(self.unite.text())
+                produit.unite = unicode(unite_)
                 produit.save()
                 self.libelle.clear()
                 self.unite.clear()
