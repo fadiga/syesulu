@@ -108,7 +108,6 @@ class G_reportViewWidget(F_Widget):
             strap.save()
             self.qte_utilise.clear()
             self.table_op.refresh_()
-            raise_success(_(u"Confirmation"), _(u"Registered operation"))
         else:
             raise_error(_(u"error"), _(u"Donnez le nbre de carton"))
 

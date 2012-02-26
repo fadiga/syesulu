@@ -6,7 +6,6 @@ import peewee
 
 from datetime import date, datetime
 
-
 dbh = peewee.SqliteDatabase("poulailler_base.db")
 
 
@@ -56,6 +55,7 @@ class StockRapport(BaseModel):
     def save(self):
         """
         Calcul du restant en stock après une operation."""
+        from util import raise_success, raise_error
 
         last_reports = StockRapport.filter(produit__libelle=self
                                            .produit.libelle,
@@ -67,21 +67,29 @@ class StockRapport(BaseModel):
         self.restant = 0
         try:
             last_reports = last_reports.get()
-            print last_reports.date_rapp, self.date_rapp
         except:
             last_reports = None
+
+        if last_reports == None and self.type_ == _(u"inout"):
+            raise_error(_(u"error"), _(u"Il n'existe aucun %s dans le magasin %s") %
+                                               (self.produit.libelle, self.magasin.name))
+            return False
         if last_reports:
             previous_remaining = last_reports.restant
-            print previous_remaining
             if self.type_ == _(u"input"):
                 self.restant = previous_remaining + self.qte_utilise
             if self.type_ == _(u"inout"):
                 self.restant = previous_remaining - self.qte_utilise
+                if self.restant < 0:
+                    print  self.qte_utilise, previous_remaining
+                    raise_error(_(u"error"), _(u"On peut pas utilisé %d puis qu'il ne reste que %d") %
+                                               (self.qte_utilise, previous_remaining))
+                    return False
         else:
             self.restant = self.qte_utilise
-        print "restant", self.restant
         super(StockRapport, self).save()
-        # on recupere tous les enregistrements suivant
+        raise_success(_(u"Confirmation"), _(u"Registered operation"))
+        # ----------------------------------------------------------------#
         next_reports = StockRapport.filter(produit__libelle=self.produit.libelle,
                                       magasin__name=self.magasin.name,
                                       date__gt=self.date_rapp).order_by(('date_rapp', 'asc'))
