@@ -138,4 +138,4 @@ class MagasinTableWidget(F_TableWidget):
                         formatted_number(rap.qte_utilise),
                         formatted_number(rap.restant), 
                         rap.date_rapp.strftime(u'%x %Hh:%Mmn')) \
-                        for rap in StockRapport.all()]
+                        for rap in StockRapport.select().order_by(('date_rapp', 'desc'))]

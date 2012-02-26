@@ -7,7 +7,7 @@ import peewee
 from datetime import date, datetime
 
 
-dbh = peewee.SqliteDatabase("peewee.db")
+dbh = peewee.SqliteDatabase("poulailler_base.db")
 
 
 class BaseModel(peewee.Model):
@@ -40,8 +40,8 @@ class Produit(BaseModel):
 class StockRapport(BaseModel):
     """ """
     type_ = peewee.CharField(max_length=50)
-    magasin = peewee.ForeignKeyField(Magasin, unique=True)
-    produit = peewee.ForeignKeyField(Produit, unique=True)
+    magasin = peewee.ForeignKeyField(Magasin)
+    produit = peewee.ForeignKeyField(Produit)
     qte_utilise = peewee.IntegerField(default=0)
     restant = peewee.IntegerField(default=0)
     date_rapp = peewee.DateTimeField(default=0)
@@ -53,6 +53,44 @@ class StockRapport(BaseModel):
                 'date_rapp': self.date_rapp.strftime('%F'), \
                 'produit': self.produit, 'magasin': self.magasin}
 
+    def save(self):
+        """
+        Calcul du restant en stock après une operation."""
+
+        last_reports = StockRapport.filter(produit__libelle=self
+                                           .produit.libelle,
+                                           magasin__name=self.magasin.name,
+                                           date_rapp__lt=self.date_rapp) \
+                                    .order_by(('date_rapp','desc'))
+        produit = Produit.get(libelle=self.produit.libelle)
+        previous_remaining = 0
+        self.restant = 0
+        try:
+            last_reports = last_reports.get()
+            print last_reports.date_rapp, self.date_rapp
+        except:
+            last_reports = None
+        if last_reports:
+            previous_remaining = last_reports.restant
+            print previous_remaining
+            if self.type_ == _(u"input"):
+                self.restant = previous_remaining + self.qte_utilise
+            if self.type_ == _(u"inout"):
+                self.restant = previous_remaining - self.qte_utilise
+        else:
+            self.restant = self.qte_utilise
+        print "restant", self.restant
+        super(StockRapport, self).save()
+        # on recupere tous les enregistrements suivant
+        next_reports = StockRapport.filter(produit__libelle=self.produit.libelle,
+                                      magasin__name=self.magasin.name,
+                                      date__gt=self.date_rapp).order_by(('date_rapp', 'asc'))
+        try:
+            next_reports = next_reports.get()
+        except:
+            next_reports = None
+        if next_reports:
+            next_reports.save()
 
 class Alerte(BaseModel):
     """docstring for Alerte"""
@@ -81,12 +119,11 @@ class Poulailler(BaseModel):
 
     type_ = peewee.IntegerField(default=TYPE_POUS)
     num = peewee.IntegerField(default=0)
-    nbr_sujet = peewee.IntegerField(default=0)
-    stock_maxi = peewee.IntegerField(default=0)
+    nbr_sujet_maxi = peewee.IntegerField(default=0)
     date = peewee.DateTimeField(default=0)
 
     def __unicode__(self):
-        return (u"%(type_)s %(num)s") % \
+        return (u"%(type_)s (%(num)s)") % \
                 {'type_': self.TYPE[self.type_][1], 'num': self.num}
 
     def full_name(self):

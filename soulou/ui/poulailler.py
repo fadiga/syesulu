@@ -40,23 +40,21 @@ class PoulaillerViewWidget(F_Widget):
 
         self.num = QtGui.QLineEdit()
         self.nbr_sujet = QtGui.QLineEdit()
-        self.stock_maxi = QtGui.QLineEdit()
+        self.nbr_sujet_maxi = QtGui.QLineEdit()
         self.date = FormatDate(QtCore.QDate.currentDate())
         self.date.setFont(QtGui.QFont("Courier New", 10, True))
 
         self.num.setValidator(QtGui.QIntValidator())
         editbox.addWidget(QtGui.QLabel((_(u"Type"))), 0, 0)
         editbox.addWidget(self.type_, 1, 0)
-        editbox.addWidget(QtGui.QLabel((_(u"Number"))), 0, 1)
+        editbox.addWidget(QtGui.QLabel((_(u"Number of poulailler"))), 0, 1)
         editbox.addWidget(self.num, 1, 1)
-        editbox.addWidget(QtGui.QLabel((_(u"Number sujet"))), 0, 2)
-        editbox.addWidget(self.nbr_sujet, 1, 2)
-        editbox.addWidget(QtGui.QLabel((_(u"Max"))), 0, 3)
-        editbox.addWidget(self.stock_maxi, 1, 3)
-        editbox.addWidget(QtGui.QLabel((_(u"Date"))), 0, 4)
-        editbox.addWidget(self.date, 1, 4)
+        editbox.addWidget(QtGui.QLabel((_(u"Max"))), 0, 2)
+        editbox.addWidget(self.nbr_sujet_maxi, 1, 2)
+        editbox.addWidget(QtGui.QLabel((_(u"Date"))), 0, 3)
+        editbox.addWidget(self.date, 1, 3)
 
-        editbox.addWidget(butt, 1, 5)
+        editbox.addWidget(butt, 1, 4)
 
         butt.clicked.connect(self.add_poulailler)
         editbox.addWidget(butt, 1, 2)
@@ -79,8 +77,7 @@ class PoulaillerViewWidget(F_Widget):
             poussin = Poulailler()
             poussin.type_ = int(self.type_.currentIndex())
             poussin.num = int(self.num.text())
-            poussin.nbr_sujet = int(self.nbr_sujet.text())
-            poussin.stock_maxi = int(self.stock_maxi.text())
+            poussin.nbr_sujet_maxi = int(self.nbr_sujet_maxi.text())
             poussin.date = datetime_
             poussin.save()
             self.poussin_table.refresh_()
@@ -93,7 +90,7 @@ class PoulaillerTableWidget(F_TableWidget):
 
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
-        self.header = [_(u"Nom"), _(u"Nombre de sujet"), _('Max'), _('Date')]
+        self.header = [_(u"Nom(Max)"), _(u"Nombre de sujet"), _('Date')]
         self.set_data_for()
         self.refresh(True)
 
@@ -104,5 +101,5 @@ class PoulaillerTableWidget(F_TableWidget):
         self.refresh()
 
     def set_data_for(self):
-        self.data = [(p.__unicode__(), p.nbr_sujet,\
-                      p.stock_maxi,p.date) for p in Poulailler.all()]
+        self.data = [(p.__unicode__(), p.num, 
+                      p.date) for p in Poulailler.all()]

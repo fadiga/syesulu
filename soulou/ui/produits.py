@@ -63,7 +63,6 @@ class ProduitViewWidget(F_Widget):
                 produit.unite = unicode(unite_)
                 produit.save()
                 self.libelle.clear()
-                self.unite.clear()
                 self.table_op.refresh_()
                 raise_success(_(u"Confirmation"), _(u"The product %s "
                               u" was recorded") % produit.libelle)
