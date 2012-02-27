@@ -27,56 +27,62 @@ class G_reportViewWidget(F_Widget):
         tablebox.addWidget(F_BoxTitle(_(u"Table rapports")))
         self.table_op = MagasinTableWidget(parent=self)
         tablebox.addWidget(self.table_op)
-
-        self.qte_utilise = QtGui.QLineEdit()
-        self.qte_utilise.setDragEnabled(True)
-        self.qte_utilise.setValidator(QtGui.QIntValidator())
-
-        self.date_ = FormatDate(QtCore.QDate.currentDate())
-        self.date_.setFont(QtGui.QFont("Courier New", 10, True))
-
-        self.time = QtGui.QDateTimeEdit(QtCore.QTime.currentTime())
+       
         formbox = QtGui.QVBoxLayout()
         editbox = QtGui.QGridLayout()
-        formbox.addWidget(F_BoxTitle(_(u"add report")))
 
-        self.liste_type = [_(u"input"), _(u"inout")]
-        #Combobox widget
-        self.box_type = QtGui.QComboBox()
-        for index in self.liste_type:
-            self.box_type.addItem(u'%(type)s' % {'type': index})
-        #Combobox widget
-        self.liste_magasin = Magasin.all()
-        self.box_mag = QtGui.QComboBox()
-        for index in xrange(0, len(self.liste_magasin)):
-            op = self.liste_magasin[index]
-            sentence = u"%(name)s" % {'name': op.name}
-            self.box_mag.addItem(sentence, QtCore.QVariant(op.id))
-        #Combobox widget
-        self.liste_produit = Produit.all()
-        self.box_prod = QtGui.QComboBox()
-        for index in xrange(0, len(self.liste_produit)):
-            op = self.liste_produit[index]
-            sentence = _(u"%(libelle)s") % {'libelle': op.libelle}
-            self.box_prod.addItem(sentence, QtCore.QVariant(op.id))
+        def edit_():
+            self.qte_utilise = QtGui.QLineEdit()
+            self.qte_utilise.setDragEnabled(True)
+            self.qte_utilise.setValidator(QtGui.QIntValidator())
 
-        editbox.addWidget(QtGui.QLabel(_(u"Type")), 0, 0)
-        editbox.addWidget(self.box_type, 1, 0)
-        editbox.addWidget(QtGui.QLabel(_(u"Store")), 0, 1)
-        editbox.addWidget(self.box_mag, 1, 1)
-        editbox.addWidget(QtGui.QLabel(_(u"Product")), 0, 2)
-        editbox.addWidget(self.box_prod, 1, 2)
-        editbox.addWidget(QtGui.QLabel((_(u"Quantite utilise"))), 0, 3)
-        editbox.addWidget(self.qte_utilise, 1, 3)
-        editbox.addWidget(QtGui.QLabel((_(u"Date"))), 0, 4)
-        editbox.addWidget(self.date_, 1, 4)
-        butt = Button_save(_(u"Save"))
-        butt.clicked.connect(self.add_operation)
-        editbox.addWidget(butt, 1, 5)
-        editbox.setColumnStretch(4, 2)
-        editbox.setColumnStretch(6, 2)
+            self.date_ = FormatDate(QtCore.QDate.currentDate())
+            self.date_.setFont(QtGui.QFont("Courier New", 10, True))
+
+            self.time = QtGui.QDateTimeEdit(QtCore.QTime.currentTime())
+
+            self.liste_type = [_(u"input"), _(u"inout")]
+            #Combobox widget
+            self.box_type = QtGui.QComboBox()
+            for index in self.liste_type:
+                self.box_type.addItem(u'%(type)s' % {'type': index})
+            #Combobox widget
+            self.liste_magasin = Magasin.all()
+            self.box_mag = QtGui.QComboBox()
+            for index in xrange(0, len(self.liste_magasin)):
+                op = self.liste_magasin[index]
+                sentence = u"%(name)s" % {'name': op.name}
+                self.box_mag.addItem(sentence, QtCore.QVariant(op.id))
+            #Combobox widget
+            self.liste_produit = Produit.all()
+            self.box_prod = QtGui.QComboBox()
+            for index in xrange(0, len(self.liste_produit)):
+                op = self.liste_produit[index]
+                sentence = _(u"%(libelle)s") % {'libelle': op.libelle}
+                self.box_prod.addItem(sentence, QtCore.QVariant(op.id))
+            editbox.addWidget(QtGui.QLabel(_(u"Type")), 0, 0)
+            editbox.addWidget(self.box_type, 1, 0)
+            editbox.addWidget(QtGui.QLabel(_(u"Store")), 0, 1)
+            editbox.addWidget(self.box_mag, 1, 1)
+            editbox.addWidget(QtGui.QLabel(_(u"Product")), 0, 2)
+            editbox.addWidget(self.box_prod, 1, 2)
+            editbox.addWidget(QtGui.QLabel((_(u"Quantite utilise"))), 0, 3)
+            editbox.addWidget(self.qte_utilise, 1, 3)
+            editbox.addWidget(QtGui.QLabel((_(u"Date"))), 0, 4)
+            editbox.addWidget(self.date_, 1, 4)
+            butt = Button_save(_(u"Save"))
+            butt.clicked.connect(self.add_operation)
+            editbox.addWidget(butt, 1, 5)
+            formbox.addLayout(editbox)
+            print dir(editbox)
+
+        butt_add = Button_save(_(u"Ajout"))
+        butt_add.clicked.connect(edit_)
+        editbox.addWidget(butt_add, 0, 6)
 
         formbox.addLayout(editbox)
+        editbox.setColumnStretch(7, 2)
+
         vbox.addLayout(formbox)
         vbox.addLayout(tablebox)
         self.setLayout(vbox)
@@ -122,9 +128,6 @@ class MagasinTableWidget(F_TableWidget):
                        _(u"Date")]
         self.set_data_for()
         self.refresh(True)
-        #je cache la 5 eme colonne
-        # self.hideColumn(5)
-        self.setColumnWidth(0, 20)
 
     def refresh_(self):
         """ """

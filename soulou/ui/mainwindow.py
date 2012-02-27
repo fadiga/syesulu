@@ -21,7 +21,7 @@ class MainWindow(QtGui.QMainWindow):
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
 
-        self.resize(900, 650)
+        self.resize(1200, 650)
         self.setWindowTitle(u"Gestion du poulailer")
         self.setWindowIcon(QtGui.QIcon('images/mali.png'))
 
@@ -88,7 +88,3 @@ class MainWindow(QtGui.QMainWindow):
         d.setWindowOpacity(0.97)
         d.exec_()
 
-    # def open_Dock(self, dock, modal=False, *args, **kwargs):
-    #     d = dock(parent=self, *args, **kwargs)
-    #     d.setModal(modal)
-    #     d.exec_()

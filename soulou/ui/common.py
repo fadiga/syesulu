@@ -8,7 +8,7 @@ from datetime import *
 
 from util import formatted_number
 
-MAIN_WIDGET_SIZE = 950
+MAIN_WIDGET_SIZE = 1200
 
 
 class TabPane(QtGui.QTabBar):
@@ -41,7 +41,7 @@ class Button(QtGui.QCommandLinkButton):
     def __init__(self, *args, **kwargs):
         super(Button, self).__init__(*args, **kwargs)
         self.setAutoDefault(True)
-        self.setCheckable(True)
+        # self.setCheckable(True)
 
 
 class Button_save(QtGui.QCommandLinkButton):
@@ -49,7 +49,7 @@ class Button_save(QtGui.QCommandLinkButton):
     def __init__(self, *args, **kwargs):
         super(Button_save, self).__init__(*args, **kwargs)
         self.setAutoDefault(True)
-        self.setCheckable(True)
+        # self.setCheckable(True)
         self.setIcon(QtGui.QIcon.fromTheme('save',
                                            QtGui.QIcon('images/save.png')))
 
@@ -96,7 +96,7 @@ class F_Widget(QtGui.QWidget):
 
         QtGui.QWidget.__init__(self, parent=parent, *args, **kwargs)
 
-        self.setMaximumWidth(MAIN_WIDGET_SIZE)
+        # self.setMaximumWidth(MAIN_WIDGET_SIZE)
 
     def refresh(self):
         pass
