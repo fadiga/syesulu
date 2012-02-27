@@ -41,27 +41,36 @@ class Button(QtGui.QCommandLinkButton):
     def __init__(self, *args, **kwargs):
         super(Button, self).__init__(*args, **kwargs)
         self.setAutoDefault(True)
+        self.setCursor(Qt.PointingHandCursor)
+        # self.setCursor(Qt.ForbiddenCursor)
+        # self.setFixedSize(100, 40)
+
+        self.setFont(QtGui.QFont("Comic Sans MS", 13, QtGui.QFont.Bold,True))
+
         # self.setCheckable(True)
 
 
-class Button_save(QtGui.QCommandLinkButton):
+class Button_save(Button):
 
     def __init__(self, *args, **kwargs):
         super(Button_save, self).__init__(*args, **kwargs)
-        self.setAutoDefault(True)
-        # self.setCheckable(True)
         self.setIcon(QtGui.QIcon.fromTheme('save',
                                            QtGui.QIcon('images/save.png')))
 
+class Button_add(Button):
 
-class Button_export(QtGui.QCommandLinkButton):
+    def __init__(self, *args, **kwargs):
+        super(Button_add, self).__init__(*args, **kwargs)
+        self.setIcon(QtGui.QIcon.fromTheme('save',
+                                           QtGui.QIcon('images/add.ico')))
+
+
+class Button_export(Button):
 
     def __init__(self, *args, **kwargs):
         super(Button_export, self).__init__(*args, **kwargs)
-        self.setAutoDefault(True)
         self.setIcon(QtGui.QIcon.fromTheme('xls',
                                            QtGui.QIcon('images/xls.png')))
-        self.setCheckable(True)
 
 
 class FormatDate(QtGui.QDateTimeEdit):

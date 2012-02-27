@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: soulou 0.1\n"
 "Report-Msgid-Bugs-To: bugs@yeleman.com\n"
-"POT-Creation-Date: 2012-02-23 18:20+0000\n"
+"POT-Creation-Date: 2012-02-27 09:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,22 +17,65 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
+#: /home/fadiga/projets/syesoulou/soulou//model.py:73
+#: /home/fadiga/projets/syesoulou/soulou//model.py:81
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:44
+msgid "inout"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou//model.py:74
+#, python-format
+msgid "Il n'existe aucun %s dans le magasin %s"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou//model.py:74
+#: /home/fadiga/projets/syesoulou/soulou//model.py:85
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:117
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:70
+msgid "error"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou//model.py:79
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:44
+msgid "input"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou//model.py:85
+#, python-format
+msgid "On peut pas utilisé %d puis qu'il ne reste que %d"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou//model.py:91
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:62
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:84
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:85
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:67
+msgid "Confirmation"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou//model.py:91
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:62
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:84
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:85
+msgid "Registered operation"
+msgstr ""
+
 #: /home/fadiga/projets/syesoulou/soulou//util.py:37
 #, python-format
 msgid "File %s is not available."
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/common.py:71
+#: /home/fadiga/projets/syesoulou/soulou/ui/common.py:73
 msgid "dd/MM/yyyy"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/common.py:123
+#: /home/fadiga/projets/syesoulou/soulou/ui/common.py:125
 msgid "TOTAL"
 msgstr ""
 
 #: /home/fadiga/projets/syesoulou/soulou/ui/dashboard.py:18
 #: /home/fadiga/projets/syesoulou/soulou/ui/dashboard.py:23
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:27
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:32
 msgid "Dashboard"
 msgstr ""
 
@@ -40,76 +83,207 @@ msgstr ""
 msgid "Les stocks actual"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/dashboard.py:33
+#: /home/fadiga/projets/syesoulou/soulou/ui/dashboard.py:32
 msgid "Etat"
 msgstr ""
 
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:23
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:36
+msgid "Management reports"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:27
+msgid "Table rapports"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:61
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:43
+#, python-format
+msgid "%(libelle)s"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:63
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:125
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:48
+msgid "Type"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:65
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:125
+msgid "Store"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:67
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:125
+msgid "Product"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:69
+msgid "Quantite utilise"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:71
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:127
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:54
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:93
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:54
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:95
+msgid "Date"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:73
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:41
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:32
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:46
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:45
+msgid "Save"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:78
+msgid "Ajout"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:117
+msgid "Donnez le nbre de carton"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:126
+msgid "Quantite"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:126
+msgid "Remaining"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:20
+msgid "Stores"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:22
+msgid "The list of stores"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:25
+msgid "Table stores"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:35
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:71
+msgid "Name"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:37
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:71
+msgid "Quantity maxi"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:64
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:86
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:87
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:73
+msgid "Error"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:64
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:86
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:87
+msgid "Give the name of the store"
+msgstr ""
+
 #. Exit
-#. Exit
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:25
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:26
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:30
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:30
 msgid "Exit"
 msgstr ""
 
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:34
+msgid "Produit"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:39
+msgid "Nouveau poulailler"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:42
+msgid "Nouveau poussin"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:61
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:20
+msgid "Products"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:65
+msgid "Management Reports"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:69
+msgid "Management Poussin"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:73
+msgid "Management Poulailler"
+msgstr ""
+
 #. Menu File
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:16
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:21
 msgid "&File"
 msgstr ""
 
 #. Export
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:18
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:23
 msgid "&Export data"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:20
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:25
 msgid "Backup Database"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:22
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:27
 msgid "In an Excel file"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:28
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:32
 msgid "Quiter l'application"
 msgstr ""
 
 #. Menu aller à
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:35
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:39
 msgid "&Go to"
 msgstr ""
 
 #. magasin
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:38
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:42
 msgid "New store"
 msgstr ""
 
 #. Rapport periodique
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:45
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:49
 msgid "Periodic report"
 msgstr ""
 
 #. Rapport inventaire
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:52
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:56
 msgid "Inventory"
 msgstr ""
 
 #. Menu Aide
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:58
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:59
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:84
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:63
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:64
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:89
 msgid "help"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:61
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:88
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:66
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:93
 msgid "About"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:85
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:90
 msgid "Besoin d'aide"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:89
+#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:94
 msgid ""
 "G_stock gestion de stock\n"
 "\n"
@@ -119,6 +293,103 @@ msgid ""
 "Bamako(Mali)\n"
 "Tel: (223)76 43 38 90\n"
 "E-mail: ibfadiga@gmail.com"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:21
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:23
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:50
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:94
+msgid "Poulailler"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:26
+msgid "Table Poulailler"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:50
+msgid "Number of poulailler"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:52
+msgid "Max"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:93
+msgid "Nom(Max)"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:93
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:48
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:94
+msgid "Nombre de sujet"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:21
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:23
+msgid "Poussin"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:26
+msgid "Table poussins"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:52
+#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:94
+msgid "Race"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:22
+msgid "The list of products"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:25
+msgid "Table products"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:31
+msgid "kg"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:31
+msgid "litre"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:31
+msgid "oeuf"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:39
+msgid "Add product"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:41
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:80
+msgid "Designation"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:43
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:80
+msgid "Unite"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:67
+#, python-format
+msgid "The product %s  was recorded"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:71
+msgid "Give the room number in the box"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:73
+msgid "Give the name of the product"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/report_period.py:18
+#: /home/fadiga/projets/syesoulou/soulou/ui/report_period.py:23
+#: /home/fadiga/projets/syesoulou/soulou/ui/report_period.py:25
+#: /home/fadiga/projets/syesoulou/soulou/ui/report_period.py:32
+msgid "Rapport"
 msgstr ""
 
 #: /home/fadiga/projets/syesoulou/soulou/ui/statusbar.py:17

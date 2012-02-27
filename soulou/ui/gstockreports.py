@@ -9,7 +9,7 @@ from PyQt4 import QtGui, QtCore
 
 from model import *
 from common import (F_Widget, F_PageTitle, F_TableWidget,
-                    F_BoxTitle, Button_save, FormatDate)
+                    F_BoxTitle, Button_add, Button_save, FormatDate)
 from util import raise_success, raise_error, formatted_number
 from magasins import MagasinViewWidget
 from produits import ProduitViewWidget
@@ -25,7 +25,7 @@ class G_reportViewWidget(F_Widget):
 
         tablebox = QtGui.QVBoxLayout()
         tablebox.addWidget(F_BoxTitle(_(u"Table rapports")))
-        self.table_op = MagasinTableWidget(parent=self)
+        self.table_op = StockRapTableWidget(parent=self)
         tablebox.addWidget(self.table_op)
        
         formbox = QtGui.QVBoxLayout()
@@ -74,11 +74,10 @@ class G_reportViewWidget(F_Widget):
             butt.clicked.connect(self.add_operation)
             editbox.addWidget(butt, 1, 5)
             formbox.addLayout(editbox)
-            print dir(editbox)
 
-        butt_add = Button_save(_(u"Ajout"))
-        butt_add.clicked.connect(edit_)
-        editbox.addWidget(butt_add, 0, 6)
+        self.butt_add = Button_add(_(u"Ajout"))
+        self.butt_add.clicked.connect(edit_)
+        editbox.addWidget(self.butt_add, 0, 6)
 
         formbox.addLayout(editbox)
         editbox.setColumnStretch(7, 2)
@@ -118,7 +117,7 @@ class G_reportViewWidget(F_Widget):
             raise_error(_(u"error"), _(u"Donnez le nbre de carton"))
 
 
-class MagasinTableWidget(F_TableWidget):
+class StockRapTableWidget(F_TableWidget):
     """ """
 
     def __init__(self, parent, *args, **kwargs):
@@ -141,3 +140,15 @@ class MagasinTableWidget(F_TableWidget):
                         formatted_number(rap.restant), 
                         rap.date_rapp.strftime(u'%x %Hh:%Mmn')) \
                         for rap in StockRapport.select().order_by(('date_rapp', 'desc'))]
+
+    def _item_for_data(self, row, column, data, context=None):
+        if column == 0 and self.data[row][0] == _("input"):
+            return QtGui.QTableWidgetItem(QtGui.QIcon("images/in.ico"),
+                                                      u"")
+        if column == 0 and self.data[row][0] == _("inout"):
+            return QtGui.QTableWidgetItem(QtGui.QIcon("images/out.ico"),
+                                                      u"")
+
+        return super(StockRapTableWidget, self)\
+                                            ._item_for_data(row, column, \
+                                                        data, context)

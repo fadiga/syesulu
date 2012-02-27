@@ -23,7 +23,7 @@ class MainWindow(QtGui.QMainWindow):
 
         self.resize(1200, 650)
         self.setWindowTitle(u"Gestion du poulailer")
-        self.setWindowIcon(QtGui.QIcon('images/mali.png'))
+        self.setWindowIcon(QtGui.QIcon('images/eggs.ico'))
 
         self.toolbar = QtGui.QToolBar()
         self.toolbar.addAction(QtGui.QIcon('images/quiter.png'), \
