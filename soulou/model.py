@@ -62,7 +62,6 @@ class StockRapport(BaseModel):
                                            magasin__name=self.magasin.name,
                                            date_rapp__lt=self.date_rapp) \
                                     .order_by(('date_rapp','desc'))
-        produit = Produit.get(libelle=self.produit.libelle)
         previous_remaining = 0
         self.restant = 0
         try:
