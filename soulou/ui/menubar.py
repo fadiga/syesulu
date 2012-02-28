@@ -9,7 +9,7 @@ from dashboard import DashbordViewWidget
 from magasins import MagasinViewWidget
 from report_period import ReportViewWidget
 from poussin import PoussinViewWidget
-from poulailler import PoulaillerViewWidget
+from poulailler import ChickenCoopViewWidget
 
 
 class MenuBar(QtGui.QMenuBar, F_Widget):

@@ -2,7 +2,7 @@
 # encoding=utf-8
 # Autor: Fadiga
 
-from model import (Magasin, Produit, StockRapport, Poulailler, 
+from model import (Magasin, Produit, StockRapport, ChickenCoop,
                    PsArrivage, Alerte)
 
 
@@ -11,7 +11,7 @@ def setup(drop_tables=False):
 
     did_create = False
 
-    for model in [Magasin, Produit, StockRapport, Poulailler,
+    for model in [Magasin, Produit, StockRapport, ChickenCoop,
                   PsArrivage, Alerte]:
         if drop_tables:
             model.drop_table()

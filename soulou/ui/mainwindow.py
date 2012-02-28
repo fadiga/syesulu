@@ -11,8 +11,9 @@ from gstockreports import G_reportViewWidget
 from dashboard import DashbordViewWidget
 from magasins import MagasinViewWidget
 from produits import ProduitViewWidget
-from poussin import PoussinViewWidget
-from poulailler import PoulaillerViewWidget
+from chiks import ChiksViewWidget
+from monitoring_chicks import PsRapportViewWidget
+from chickencoop import ChickenCoopViewWidget
 from menubar import MenuBar
 from statusbar import GStatusBar
 
@@ -36,11 +37,15 @@ class MainWindow(QtGui.QMainWindow):
         self.toolbar.addAction(_(u"Management reports"), \
                                                 self.goto_gestion_rapport)
         self.toolbar.addSeparator()
-        self.toolbar.addAction(_(u"Nouveau poulailler"), \
-                                                self.goto_poulailler)
+        self.toolbar.addAction(_(u"New chicken coop"), \
+                                                self.goto_chickencoop)
         self.toolbar.addSeparator()
-        self.toolbar.addAction(_(u"Nouveau poussin"), \
-                                                self.goto_poussin)
+        self.toolbar.addAction(_(u"News chiks"), \
+                                                self.goto_chiks)
+
+        self.toolbar.addSeparator()
+        self.toolbar.addAction(_(u"Suivi chiks"), \
+                                                self.goto__suivi_chiks)
         self.addToolBar(self.toolbar)
 
         self.menubar = MenuBar(self)
@@ -65,13 +70,17 @@ class MainWindow(QtGui.QMainWindow):
         self.setWindowTitle(_(u"Management Reports"))
         self.change_context(G_reportViewWidget)
 
-    def goto_poussin(self):
-        self.setWindowTitle(_(u"Management Poussin"))
-        self.change_context(PoussinViewWidget)
+    def goto_chiks(self):
+        self.setWindowTitle(_(u"Management chiks"))
+        self.change_context(ChiksViewWidget)
 
-    def goto_poulailler(self):
-        self.setWindowTitle(_(u"Management Poulailler"))
-        self.change_context(PoulaillerViewWidget)
+    def goto__suivi_chiks(self):
+        self.setWindowTitle(_(u"Suivi chiks"))
+        self.change_context(PsRapportViewWidget)
+
+    def goto_chickencoop(self):
+        self.setWindowTitle(_(u"Management Chicken Coop"))
+        self.change_context(ChickenCoopViewWidget)
 
 
     def change_context(self, context_widget, *args, **kwargs):
