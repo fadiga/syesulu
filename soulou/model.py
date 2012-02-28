@@ -117,7 +117,7 @@ class Alerte(BaseModel):
         return (u"%(alerte)s") % {'alerte': self.objets}
 
 
-class Poulailler(BaseModel):
+class ChickenCoop(BaseModel):
     """docstring for Poulalle"""
 
     TYPE_POUL = 0 # blank created
@@ -131,7 +131,7 @@ class Poulailler(BaseModel):
     date = peewee.DateTimeField(default=0)
 
     def __unicode__(self):
-        return (u"%(type_)s (%(num)s)") % \
+        return (u"%(type_)s %(num)s") % \
                 {'type_': self.TYPE[self.type_][1], 'num': self.num}
 
     def full_name(self):
@@ -143,20 +143,20 @@ class PsArrivage(BaseModel):
     """docstring for PsArrivage"""
 
     race = peewee.CharField(max_length=50)
-    nbre_total_poussin = peewee.IntegerField(default=0)
-    date_arriver = peewee.DateTimeField(default=0)
-    poulailler = peewee.ForeignKeyField(Poulailler)
+    nb_total_chiks = peewee.IntegerField(default=0)
+    arrival_date = peewee.DateTimeField(default=0)
+    chicken_coop = peewee.ForeignKeyField(ChickenCoop)
 
     def __unicode__(self):
-        return (u"%(nbre_total_poussin)s %(date_arriver)s") % \
-                {'nbre_total_poussin': self.nbre_total_poussin,
-                 'date_arriver': self.date_arriver}
+        return (u"%(nb_total_chiks)s %(arrival_date)s") % \
+                {'nb_total_chiks': self.nb_total_chiks,
+                 'arrival_date': self.arrival_date}
 
 
 class PsRapport(BaseModel):
     """docstring for PsPoulalle"""
 
-    poulailler = peewee.ForeignKeyField(Poulailler, unique=True)
+    poulailler = peewee.ForeignKeyField(ChickenCoop, unique=True)
     nbr_mort = peewee.IntegerField(default=0)
     restant = peewee.IntegerField(default=0)
     nbr_oeuf = peewee.IntegerField(default=0)

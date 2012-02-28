@@ -5,26 +5,26 @@
 from datetime import datetime
 from PyQt4 import QtGui, QtCore
 
-from database import Poulailler
+from database import ChickenCoop
 from common import (F_Widget, F_PageTitle, F_TableWidget, F_BoxTitle,
                     Button_save, FormatDate)
 from util import raise_success, raise_error
 
 
-class PoulaillerViewWidget(F_Widget):
+class ChickenCoopViewWidget(F_Widget):
     """ Gestion de pasin  """
 
     def __init__(self, parent=0, *args, **kwargs):
-        super(PoulaillerViewWidget, self).__init__(parent=parent,
+        super(ChickenCoopViewWidget, self).__init__(parent=parent,
                                                         *args, **kwargs)
 
-        self.setWindowTitle(_(u"Poulailler"))
+        self.setWindowTitle(_(u"Chicken Coop"))
         vbox = QtGui.QVBoxLayout()
-        self.title = F_PageTitle(_("Poulailler"))
+        self.title = F_PageTitle(_("Chicken Coop"))
 
         tablebox = QtGui.QVBoxLayout()
-        tablebox.addWidget(F_BoxTitle(_(u"Table Poulailler")))
-        self.poussin_table = PoulaillerTableWidget(parent=self)
+        tablebox.addWidget(F_BoxTitle(_(u"Table Chicken Coop")))
+        self.poussin_table = ChickenCoopTableWidget(parent=self)
         tablebox.addWidget(self.poussin_table)
 
         formbox = QtGui.QVBoxLayout()
@@ -32,7 +32,7 @@ class PoulaillerViewWidget(F_Widget):
         butt = Button_save(_(u"Save"))
 
 
-        liste_type = [u"poulailler", u"poussinière"]
+        liste_type = [u"chicken coop", u"poussinière"]
         #Combobox widget
         self.type_ = QtGui.QComboBox()
         for index in liste_type:
@@ -47,7 +47,7 @@ class PoulaillerViewWidget(F_Widget):
         self.num.setValidator(QtGui.QIntValidator())
         editbox.addWidget(QtGui.QLabel((_(u"Type"))), 0, 0)
         editbox.addWidget(self.type_, 1, 0)
-        editbox.addWidget(QtGui.QLabel((_(u"Number of poulailler"))), 0, 1)
+        editbox.addWidget(QtGui.QLabel((_(u"Number of chicken coop"))), 0, 1)
         editbox.addWidget(self.num, 1, 1)
         editbox.addWidget(QtGui.QLabel((_(u"Max"))), 0, 2)
         editbox.addWidget(self.nbr_sujet_maxi, 1, 2)
@@ -56,7 +56,7 @@ class PoulaillerViewWidget(F_Widget):
 
         editbox.addWidget(butt, 1, 4)
 
-        butt.clicked.connect(self.add_poulailler)
+        butt.clicked.connect(self.add_chickencoop)
         editbox.addWidget(butt, 1, 2)
 
         formbox.addLayout(editbox)
@@ -65,7 +65,7 @@ class PoulaillerViewWidget(F_Widget):
         vbox.addLayout(tablebox)
         self.setLayout(vbox)
 
-    def add_poulailler(self):
+    def add_chickencoop(self):
         ''' add operation '''
         date_ = self.date.text()
         day, month, year = date_.split('/')
@@ -74,7 +74,7 @@ class PoulaillerViewWidget(F_Widget):
                              int(dt.hour), int(dt.minute), int(dt.second),
                              int(dt.microsecond))
         if unicode(self.num.text()) != "":
-            poussin = Poulailler()
+            poussin = ChickenCoop()
             poussin.type_ = int(self.type_.currentIndex())
             poussin.num = int(self.num.text())
             poussin.nbr_sujet_maxi = int(self.nbr_sujet_maxi.text())
@@ -86,11 +86,11 @@ class PoulaillerViewWidget(F_Widget):
             raise_error(_("Error"), _(u"Give the name of the store"))
 
 
-class PoulaillerTableWidget(F_TableWidget):
+class ChickenCoopTableWidget(F_TableWidget):
 
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
-        self.header = [_(u"Nom(Max)"), _(u"Nombre de sujet"), _('Date')]
+        self.header = [_(u"Nom"), _(u"Max"), _('Date')]
         self.set_data_for()
         self.refresh(True)
 
@@ -101,5 +101,5 @@ class PoulaillerTableWidget(F_TableWidget):
         self.refresh()
 
     def set_data_for(self):
-        self.data = [(p.__unicode__(), p.num, 
-                      p.date) for p in Poulailler.all()]
+        self.data = [(p.__unicode__(), p.nbr_sujet_maxi,
+                      p.date) for p in ChickenCoop.all()]
