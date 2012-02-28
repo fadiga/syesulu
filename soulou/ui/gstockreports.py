@@ -27,7 +27,7 @@ class G_reportViewWidget(F_Widget):
         tablebox.addWidget(F_BoxTitle(_(u"Table rapports")))
         self.table_op = StockRapTableWidget(parent=self)
         tablebox.addWidget(self.table_op)
-       
+
         formbox = QtGui.QVBoxLayout()
         editbox = QtGui.QGridLayout()
 
@@ -137,7 +137,7 @@ class StockRapTableWidget(F_TableWidget):
     def set_data_for(self):
         self.data = [(rap.type_, rap.magasin, rap.produit,
                         formatted_number(rap.qte_utilise),
-                        formatted_number(rap.restant), 
+                        formatted_number(rap.restant),
                         rap.date_rapp.strftime(u'%x %Hh:%Mmn')) \
                         for rap in StockRapport.select().order_by(('date_rapp', 'desc'))]
 
