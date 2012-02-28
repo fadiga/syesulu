@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: soulou 0.1\n"
 "Report-Msgid-Bugs-To: bugs@yeleman.com\n"
-"POT-Creation-Date: 2012-02-27 09:38+0000\n"
+"POT-Creation-Date: 2012-02-28 14:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,46 +17,50 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:73
-#: /home/fadiga/projets/syesoulou/soulou//model.py:81
+#: /home/fadiga/projets/syesoulou/soulou//model.py:72
+#: /home/fadiga/projets/syesoulou/soulou//model.py:80
 #: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:44
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:148
 msgid "inout"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:74
+#: /home/fadiga/projets/syesoulou/soulou//model.py:73
 #, python-format
 msgid "Il n'existe aucun %s dans le magasin %s"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:74
-#: /home/fadiga/projets/syesoulou/soulou//model.py:85
+#: /home/fadiga/projets/syesoulou/soulou//model.py:73
+#: /home/fadiga/projets/syesoulou/soulou//model.py:84
 #: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:117
 #: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:70
 msgid "error"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:79
+#: /home/fadiga/projets/syesoulou/soulou//model.py:78
 #: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:44
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:145
 msgid "input"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:85
+#: /home/fadiga/projets/syesoulou/soulou//model.py:84
 #, python-format
 msgid "On peut pas utilisé %d puis qu'il ne reste que %d"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:91
+#: /home/fadiga/projets/syesoulou/soulou//model.py:90
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:84
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:85
 #: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:62
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:84
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:85
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:85
 #: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:67
 msgid "Confirmation"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:91
+#: /home/fadiga/projets/syesoulou/soulou//model.py:90
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:84
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:85
 #: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:62
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:84
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:85
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:85
 msgid "Registered operation"
 msgstr ""
 
@@ -65,17 +69,115 @@ msgstr ""
 msgid "File %s is not available."
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/common.py:73
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:21
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:23
+msgid "Chicken Coop"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:26
+msgid "Table Chicken Coop"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:32
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:46
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:73
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:41
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:46
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:45
+msgid "Save"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:48
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:63
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:125
+msgid "Type"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:50
+msgid "Number of chicken coop"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:52
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:93
+msgid "Max"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:54
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:93
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:54
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:95
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:71
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:127
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:48
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:95
+msgid "Date"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:86
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:87
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:64
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:87
+#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:73
+msgid "Error"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:86
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:87
+#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:64
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:87
+msgid "Give the name of the store"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:93
+msgid "Nom"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:21
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:23
+msgid "chiks"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:26
+msgid "Table chiks"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:43
+#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:61
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:43
+#, python-format
+msgid "%(libelle)s"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:48
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:94
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:54
+msgid "Nombre de sujet"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:50
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:94
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:50
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:94
+msgid "Poulailler"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:52
+#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:94
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:52
+msgid "Race"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/common.py:80
 msgid "dd/MM/yyyy"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/common.py:125
+#: /home/fadiga/projets/syesoulou/soulou/ui/common.py:132
 msgid "TOTAL"
 msgstr ""
 
 #: /home/fadiga/projets/syesoulou/soulou/ui/dashboard.py:18
 #: /home/fadiga/projets/syesoulou/soulou/ui/dashboard.py:23
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:32
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:33
 msgid "Dashboard"
 msgstr ""
 
@@ -88,24 +190,12 @@ msgid "Etat"
 msgstr ""
 
 #: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:23
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:36
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:37
 msgid "Management reports"
 msgstr ""
 
 #: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:27
 msgid "Table rapports"
-msgstr ""
-
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:61
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:43
-#, python-format
-msgid "%(libelle)s"
-msgstr ""
-
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:63
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:125
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:48
-msgid "Type"
 msgstr ""
 
 #: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:65
@@ -120,23 +210,6 @@ msgstr ""
 
 #: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:69
 msgid "Quantite utilise"
-msgstr ""
-
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:71
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:127
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:54
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:93
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:54
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:95
-msgid "Date"
-msgstr ""
-
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:73
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:41
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:32
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:46
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:45
-msgid "Save"
 msgstr ""
 
 #: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:78
@@ -177,52 +250,44 @@ msgstr ""
 msgid "Quantity maxi"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:64
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:86
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:87
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:73
-msgid "Error"
-msgstr ""
-
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:64
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:86
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:87
-msgid "Give the name of the store"
-msgstr ""
-
 #. Exit
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:30
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:31
 #: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:30
 msgid "Exit"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:34
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:35
 msgid "Produit"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:39
-msgid "Nouveau poulailler"
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:40
+msgid "New chicken coop"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:42
-msgid "Nouveau poussin"
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:43
+msgid "News chiks"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:61
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:47
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:78
+msgid "Suivi chiks"
+msgstr ""
+
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:66
 #: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:20
 msgid "Products"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:65
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:70
 msgid "Management Reports"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:69
-msgid "Management Poussin"
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:74
+msgid "Management chiks"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:73
-msgid "Management Poulailler"
+#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:82
+msgid "Management Chicken Coop"
 msgstr ""
 
 #. Menu File
@@ -285,7 +350,7 @@ msgstr ""
 
 #: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:94
 msgid ""
-"G_stock gestion de stock\n"
+"gestion de poulailler\n"
 "\n"
 "Developpeur: Ibrahima Fadiga, Alou Dolo\n"
 "\n"
@@ -295,47 +360,33 @@ msgid ""
 "E-mail: ibfadiga@gmail.com"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:21
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:23
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:50
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:94
-msgid "Poulailler"
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:21
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:23
+msgid "suivi"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:26
-msgid "Table Poulailler"
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:26
+msgid "Table suivi"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:50
-msgid "Number of poulailler"
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:94
+msgid "Mort"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:52
-msgid "Max"
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:94
+msgid "restant"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:93
-msgid "Nom(Max)"
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:95
+msgid "Date rapport"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/poulailler.py:93
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:48
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:94
-msgid "Nombre de sujet"
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:95
+msgid "Oeufs"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:21
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:23
-msgid "Poussin"
-msgstr ""
-
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:26
-msgid "Table poussins"
-msgstr ""
-
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:52
-#: /home/fadiga/projets/syesoulou/soulou/ui/poussin.py:94
-msgid "Race"
+#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:95
+msgid "Poids"
 msgstr ""
 
 #: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:22
