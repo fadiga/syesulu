@@ -156,14 +156,14 @@ class PsArrivage(BaseModel):
 class PsRapport(BaseModel):
     """docstring for PsPoulalle"""
 
-    poulailler = peewee.ForeignKeyField(ChickenCoop, unique=True)
-    nbr_mort = peewee.IntegerField(default=0)
-    restant = peewee.IntegerField(default=0)
-    nbr_oeuf = peewee.IntegerField(default=0)
-    date_rapp = peewee.DateTimeField(default=0)
-    poids = peewee.IntegerField(default=0)
+    chickencoop = peewee.ForeignKeyField(ChickenCoop, unique=True)
+    nbb_death = peewee.IntegerField(default=0)
+    remaining = peewee.IntegerField(default=0)
+    nb_eggs = peewee.IntegerField(default=0)
+    date_report = peewee.DateTimeField(default=0)
+    weight = peewee.IntegerField(default=0)
 
     def __unicode__(self):
-        return (u"%(poulailler)s %(restant)s %(date)s") % \
-                {'poulailler': self.poulailler, 'restant' : self.restant,
-                 'date': self.date}
+        return (u"%(chickencoop)s %(remaining)s %(date_report)s") % \
+                {'chickencoop': self.chickencoop, 'remaining' : self.remaining,
+                 'date_report': self.date_report}

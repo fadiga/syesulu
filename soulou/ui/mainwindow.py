@@ -12,6 +12,7 @@ from dashboard import DashbordViewWidget
 from magasins import MagasinViewWidget
 from produits import ProduitViewWidget
 from chiks import ChiksViewWidget
+from monitoring_chicks import PsRapportViewWidget
 from chickencoop import ChickenCoopViewWidget
 from menubar import MenuBar
 from statusbar import GStatusBar
@@ -41,6 +42,10 @@ class MainWindow(QtGui.QMainWindow):
         self.toolbar.addSeparator()
         self.toolbar.addAction(_(u"News chiks"), \
                                                 self.goto_chiks)
+
+        self.toolbar.addSeparator()
+        self.toolbar.addAction(_(u"Suivi chiks"), \
+                                                self.goto__suivi_chiks)
         self.addToolBar(self.toolbar)
 
         self.menubar = MenuBar(self)
@@ -68,6 +73,10 @@ class MainWindow(QtGui.QMainWindow):
     def goto_chiks(self):
         self.setWindowTitle(_(u"Management chiks"))
         self.change_context(ChiksViewWidget)
+
+    def goto__suivi_chiks(self):
+        self.setWindowTitle(_(u"Suivi chiks"))
+        self.change_context(PsRapportViewWidget)
 
     def goto_chickencoop(self):
         self.setWindowTitle(_(u"Management Chicken Coop"))
