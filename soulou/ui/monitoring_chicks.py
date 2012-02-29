@@ -45,7 +45,6 @@ class PsRapportViewWidget(F_Widget):
             self.chicken_coop.addItem(sentence, QtCore.QVariant(op.id))
 
         butt = Button_save(_(u"Save"))
-        #~ self.nb_total_chiks.setValidator(QtGui.QIntValidator())
         editbox.addWidget(QtGui.QLabel((_(u"Date"))), 0, 0)
         editbox.addWidget(self.date_report, 1, 0)
         editbox.addWidget(QtGui.QLabel((_(u"Poulailler"))), 0, 1)
@@ -73,8 +72,8 @@ class PsRapportViewWidget(F_Widget):
         day, month, year = date_.split('/')
         dt = datetime.now()
         chicken_coop = self.list_chicken_coop[self.chicken_coop.currentIndex()]
-        datetime_ = datetime(int(year), int(month), int(day),
-                             int(dt.hour), int(dt.minute), int(dt.second),
+        datetime_ = datetime(int(year), int(month), int(day), int(dt.hour),
+                             int(dt.minute), int(dt.second),
                              int(dt.microsecond))
 
         if unicode(self.nb_death.text()) != "":
@@ -107,6 +106,5 @@ class ChiksTableWidget(F_TableWidget):
 
     def set_data_for(self):
 
-        self.data = [(ps.chickencoop.full_name(), ps.nb_death, ps.remaining, \
-        ps.nb_eggs, ps.date_report) for ps in PsRapport.all()]
-
+        self.data = [(ps.chickencoop.full_name(), ps.nb_death, ps.remaining,
+                      ps.nb_eggs, ps.date_report) for ps in PsRapport.all()]

@@ -7,7 +7,7 @@ from PyQt4 import QtGui, QtCore
 
 from database import ChickenCoop
 from common import (F_Widget, F_PageTitle, F_TableWidget, F_BoxTitle,
-                    Button_save, FormatDate)
+                    Button_save, FormatDate, IntLineEdit)
 from util import raise_success, raise_error
 
 
@@ -38,9 +38,9 @@ class ChickenCoopViewWidget(F_Widget):
         for index in liste_type:
             self.type_.addItem(u'%(type)s' % {'type': index})
 
-        self.num = QtGui.QLineEdit()
-        self.nbr_sujet = QtGui.QLineEdit()
-        self.nbr_sujet_maxi = QtGui.QLineEdit()
+        self.num = IntLineEdit()
+        self.nbr_sujet = IntLineEdit()
+        self.nbr_sujet_maxi = IntLineEdit()
         self.date = FormatDate(QtCore.QDate.currentDate())
         self.date.setFont(QtGui.QFont("Courier New", 10, True))
 

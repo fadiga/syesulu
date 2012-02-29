@@ -8,7 +8,7 @@ from common import F_Widget
 from dashboard import DashbordViewWidget
 from magasins import MagasinViewWidget
 from report_period import ReportViewWidget
-from poussin import PoussinViewWidget
+from chiks import ChiksViewWidget
 from chickencoop import ChickenCoopViewWidget
 
 

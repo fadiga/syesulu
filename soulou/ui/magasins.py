@@ -8,7 +8,7 @@ from PyQt4 import QtGui, QtCore
 
 from database import *
 from common import (F_Widget, F_PageTitle, F_TableWidget, F_BoxTitle,
-                    Button_save)
+                    Button_save, IntLineEdit)
 from util import raise_success, raise_error
 
 
@@ -30,8 +30,8 @@ class MagasinViewWidget(F_Widget):
         editbox = QtGui.QGridLayout()
 
         self.name = QtGui.QLineEdit()
-        self.qte_maxi_stok = QtGui.QLineEdit()
-        self.qte_maxi_stok.setValidator(QtGui.QIntValidator())
+        self.qte_maxi_stok = IntLineEdit()
+
         editbox.addWidget(QtGui.QLabel((_(u"Name"))), 0, 0)
         editbox.addWidget(self.name, 1, 0)
         editbox.addWidget(QtGui.QLabel((_(u"Quantity maxi"))), 0, 1)

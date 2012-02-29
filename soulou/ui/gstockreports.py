@@ -9,7 +9,8 @@ from PyQt4 import QtGui, QtCore
 
 from model import *
 from common import (F_Widget, F_PageTitle, F_TableWidget,
-                    F_BoxTitle, Button_add, Button_save, FormatDate)
+                    F_BoxTitle, Button_add, Button_save, FormatDate,
+                    IntLineEdit)
 from util import raise_success, raise_error, formatted_number
 from magasins import MagasinViewWidget
 from produits import ProduitViewWidget
@@ -32,9 +33,8 @@ class G_reportViewWidget(F_Widget):
         editbox = QtGui.QGridLayout()
 
         def edit_():
-            self.qte_utilise = QtGui.QLineEdit()
+            self.qte_utilise = IntLineEdit()
             self.qte_utilise.setDragEnabled(True)
-            self.qte_utilise.setValidator(QtGui.QIntValidator())
 
             self.date_ = FormatDate(QtCore.QDate.currentDate())
             self.date_.setFont(QtGui.QFont("Courier New", 10, True))
@@ -60,6 +60,7 @@ class G_reportViewWidget(F_Widget):
                 op = self.liste_produit[index]
                 sentence = _(u"%(libelle)s") % {'libelle': op.libelle}
                 self.box_prod.addItem(sentence, QtCore.QVariant(op.id))
+                
             editbox.addWidget(QtGui.QLabel(_(u"Type")), 0, 0)
             editbox.addWidget(self.box_type, 1, 0)
             editbox.addWidget(QtGui.QLabel(_(u"Store")), 0, 1)
