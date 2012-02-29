@@ -98,6 +98,13 @@ class IntLineEdit(QtGui.QLineEdit):
         QtGui.QLineEdit.__init__(self, parent)
         self.setValidator(QtGui.QIntValidator(0, 100000, self))
 
+class FloatLineEdit(QtGui.QLineEdit):
+    """Accepter que des nombre positive """
+
+    def __init__(self, parent=None):
+        QtGui.QLineEdit.__init__(self, parent)
+        self.setValidator(QtGui.QDoubleValidator(0.1, 0.1, 100, self))
+
 
 class F_Widget(QtGui.QWidget):
 

@@ -6,7 +6,7 @@ from datetime import datetime
 from PyQt4 import QtGui, QtCore
 from database import *
 from common import (F_Widget, F_PageTitle, F_TableWidget, F_BoxTitle,
-                    Button_save, FormatDate)
+                    Button_save, FormatDate, IntLineEdit, FloatLineEdit)
 from util import raise_success, raise_error
 from tabpane import tabbox
 
@@ -30,9 +30,9 @@ class PsRapportViewWidget(F_Widget):
         formbox = QtGui.QVBoxLayout()
         editbox = QtGui.QGridLayout()
 
-        self.nb_death = QtGui.QLineEdit()
-        self.nb_eggs = QtGui.QLineEdit()
-        self.weight = QtGui.QLineEdit()
+        self.nb_death = IntLineEdit()
+        self.nb_eggs = IntLineEdit()
+        self.weight = FloatLineEdit()
         self.date_report = FormatDate(QtCore.QDate.currentDate())
         self.date_report.setFont(QtGui.QFont("Courier New", 10, True))
 
@@ -82,8 +82,7 @@ class PsRapportViewWidget(F_Widget):
             ps.nb_death = int(self.nb_death.text())
             ps.nb_eggs = int(self.nb_eggs.text())
             ps.date_report = datetime_
-            ps.remaining = 0
-            ps.chicken_coop = chicken_coop
+            ps.chickencoop = chicken_coop
             ps.save()
             self.chiks_table.refresh_()
             raise_success(_(u"Confirmation"), _(u"Registered operation"))
@@ -108,7 +107,6 @@ class ChiksTableWidget(F_TableWidget):
 
     def set_data_for(self):
 
-        print 'alou', PsRapport.all()
-        self.data = [(ps.chicken_coop, ps.nb_death, ps.remaining, \
+        self.data = [(ps.chickencoop.full_name(), ps.nb_death, ps.remaining, \
         ps.nb_eggs, ps.date_report) for ps in PsRapport.all()]
 

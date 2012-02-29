@@ -131,11 +131,11 @@ class ChickenCoop(BaseModel):
 
     def __unicode__(self):
         return (u"%(type_)s %(num)s") % \
-                {'type_': self.TYPE[self.type_][1], 'num': self.num}
+                {u'type_': self.TYPE[self.type_][1], u'num': self.num}
 
     def full_name(self):
         return (u"%(type_)s %(num)s") % \
-                {'type_': self.TYPE[self.type_][1], 'num': self.num}
+                {u'type_': self.TYPE[self.type_][1], u'num': self.num}
 
 
 class PsArrivage(BaseModel):
