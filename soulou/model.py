@@ -155,8 +155,8 @@ class PsArrivage(BaseModel):
 class PsRapport(BaseModel):
     """docstring for PsPoulalle"""
 
-    chickencoop = peewee.ForeignKeyField(ChickenCoop, unique=True)
-    nbb_death = peewee.IntegerField(default=0)
+    chickencoop = peewee.ForeignKeyField(ChickenCoop)
+    nb_death = peewee.IntegerField(default=0)
     remaining = peewee.IntegerField(default=0)
     nb_eggs = peewee.IntegerField(default=0)
     date_report = peewee.DateTimeField(default=0)
