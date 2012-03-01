@@ -98,6 +98,7 @@ class IntLineEdit(QtGui.QLineEdit):
         QtGui.QLineEdit.__init__(self, parent)
         self.setValidator(QtGui.QIntValidator(0, 100000, self))
 
+
 class FloatLineEdit(QtGui.QLineEdit):
     """Accepter que des nombre positive """
 
@@ -112,7 +113,7 @@ class F_Widget(QtGui.QWidget):
 
         QtGui.QWidget.__init__(self, parent=parent, *args, **kwargs)
 
-        # self.setMaximumWidth(MAIN_WIDGET_SIZE)
+        self.setMaximumWidth(MAIN_WIDGET_SIZE)
 
     def refresh(self):
         pass

@@ -9,6 +9,7 @@ from dashboard import DashbordViewWidget
 from magasins import MagasinViewWidget
 from report_period import ReportViewWidget
 from chiks import ChiksViewWidget
+from exports import export_database_as_file
 from chickencoop import ChickenCoopViewWidget
 
 
@@ -24,8 +25,6 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
 
         export.addAction(_(u"Backup Database"), self.goto_export_db)
 
-        export.addAction(_(u"In an Excel file"),\
-                                        self.goto_export_excel)
         # Exit
         exit_ = QtGui.QAction(_(u"Exit"), self)
         exit_.setShortcut("Ctrl+Q")
@@ -79,10 +78,7 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
 
     #Export the database.
     def goto_export_db(self):
-        pass
-
-    def goto_export_excel(self):
-        self.change_main_context(DashbordViewWidget)
+        export_database_as_file()
 
     #Aide
     def goto_help(self):
