@@ -115,7 +115,8 @@ class Alerte(BaseModel):
     status = peewee.IntegerField(default=STATUS_OFF)
 
     def __unicode__(self):
-        return (u"%(alerte)s") % {'alerte': self.objets}
+        return (u"%(alerte)s %(status") % {'alerte': self.objets,
+                'status': self.status}
 
 
 class ChickenCoop(BaseModel):

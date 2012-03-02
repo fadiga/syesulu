@@ -11,6 +11,7 @@ from report_period import ReportViewWidget
 from chiks import ChiksViewWidget
 from exports import export_database_as_file
 from chickencoop import ChickenCoopViewWidget
+from alerteview import AlertViewWidget
 
 
 class MenuBar(QtGui.QMenuBar, F_Widget):
@@ -38,11 +39,18 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
         goto_ = self.addMenu(_(u"&Go to"))
 
         # magasin
-        magasin = QtGui.QAction(_(u"New store"), self)
-        magasin.setShortcut("Ctrl+M")
-        self.connect(magasin, QtCore.SIGNAL("triggered()"),
+        store = QtGui.QAction(_(u"New store"), self)
+        store.setShortcut("Ctrl+M")
+        self.connect(store, QtCore.SIGNAL("triggered()"),
                                             self.addstore)
-        goto_.addAction(magasin)
+        goto_.addAction(store)
+
+        # alerte
+        alerte = QtGui.QAction(_(u"New store"), self)
+        alerte.setShortcut("Ctrl+A")
+        self.connect(alerte, QtCore.SIGNAL("triggered()"),
+                                            self.goto_editalerte)
+        goto_.addAction(alerte)
 
         # Rapport periodique
         rap_p = QtGui.QAction(_(u"Periodic report"), self)
@@ -64,6 +72,10 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
                                     self.goto_help)
         help_.addAction(QtGui.QIcon('images/about.png'), _(u"About"),
                                     self.goto_about)
+
+    #Inventaire
+    def goto_editalerte(self):
+        self.open_dialog(AlertViewWidget)
 
     #Inventaire
     def goto_inventaire(self):
