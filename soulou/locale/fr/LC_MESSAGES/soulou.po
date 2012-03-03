@@ -7,354 +7,414 @@ msgid ""
 msgstr ""
 "Project-Id-Version: g_stock 0.1\n"
 "Report-Msgid-Bugs-To: bugs@yeleman.com\n"
-"POT-Creation-Date: 2012-02-28 14:05+0000\n"
-"PO-Revision-Date: 2012-02-11 20:30-0000\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2012-03-03 22:29+0000\n"
+"PO-Revision-Date: 2012-03-03 22:29-0000\n"
+"Last-Translator: Alou <aloud7@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:72
-#: /home/fadiga/projets/syesoulou/soulou//model.py:80
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:44
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:148
+#: /home/alou/projets/syesoulou/soulou//exports.py:17
+msgid "Sauvegarder la base de Donnée."
+msgstr ""
+
+#: /home/alou/projets/syesoulou/soulou//model.py:74
+#: /home/alou/projets/syesoulou/soulou//model.py:82
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:150
 msgid "inout"
 msgstr "Sortie"
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:73
+#: /home/alou/projets/syesoulou/soulou//model.py:75
 #, python-format
 msgid "Il n'existe aucun %s dans le magasin %s"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:73
-#: /home/fadiga/projets/syesoulou/soulou//model.py:84
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:117
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:70
+#: /home/alou/projets/syesoulou/soulou//model.py:75
+#: /home/alou/projets/syesoulou/soulou//model.py:86
+#: /home/alou/projets/syesoulou/soulou//model.py:186
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:118
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:70
 msgid "error"
 msgstr "erreur"
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:78
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:44
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:145
+#: /home/alou/projets/syesoulou/soulou//model.py:80
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:44
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:147
 msgid "input"
 msgstr "Entree"
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:84
+#: /home/alou/projets/syesoulou/soulou//model.py:86
+#: /home/alou/projets/syesoulou/soulou//model.py:186
 #, python-format
 msgid "On peut pas utilisé %d puis qu'il ne reste que %d"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:90
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:84
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:85
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:62
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:85
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:67
+#: /home/alou/projets/syesoulou/soulou//model.py:92
+#: /home/alou/projets/syesoulou/soulou//model.py:193
+#: /home/alou/projets/syesoulou/soulou/ui/alerteview.py:55
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:84
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:89
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:62
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:67
 msgid "Confirmation"
 msgstr "Confirmation"
 
-#: /home/fadiga/projets/syesoulou/soulou//model.py:90
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:84
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:85
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:62
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:85
+#: /home/alou/projets/syesoulou/soulou//model.py:92
+#: /home/alou/projets/syesoulou/soulou//model.py:193
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:84
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:89
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:62
 msgid "Registered operation"
 msgstr "Opération enregistrée"
 
-#: /home/fadiga/projets/syesoulou/soulou//util.py:37
+#: /home/alou/projets/syesoulou/soulou//util.py:37
 #, python-format
 msgid "File %s is not available."
 msgstr "Le fichier %s n'est pas disponible."
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:21
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:23
-msgid "Chicken Coop"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/alerteview.py:17
+#: /home/alou/projets/syesoulou/soulou/ui/dashboard.py:28
+msgid "Alerts"
+msgstr "Alertes"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:26
+#: /home/alou/projets/syesoulou/soulou/ui/alerteview.py:20
+msgid "Create Alert"
+msgstr "Créer une alerte"
+
+#: /home/alou/projets/syesoulou/soulou/ui/alerteview.py:28
+#: /home/alou/projets/syesoulou/soulou/ui/dashboard.py:54
+msgid "Objets"
+msgstr "Objets"
+
+#: /home/alou/projets/syesoulou/soulou/ui/alerteview.py:30
+msgid "On date"
+msgstr "Date du debut"
+
+#: /home/alou/projets/syesoulou/soulou/ui/alerteview.py:32
+#: /home/alou/projets/syesoulou/soulou/ui/dashboard.py:54
+msgid "End date"
+msgstr "date de fin"
+
+#: /home/alou/projets/syesoulou/soulou/ui/alerteview.py:35
+msgid "Records the change"
+msgstr "Enregister les modifications"
+
+#: /home/alou/projets/syesoulou/soulou/ui/alerteview.py:37
+msgid "Cancel"
+msgstr "Annuler"
+
+#: /home/alou/projets/syesoulou/soulou/ui/alerteview.py:55
+msgid "The store has been changing"
+msgstr "Le magasin à été modifier"
+
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:21
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:23
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:50
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:97
+msgid "Chicken Coop"
+msgstr "Poulailler"
+
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:26
 msgid "Table Chicken Coop"
 msgstr "Les poulaillers"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:32
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:46
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:73
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:41
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:46
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:45
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:32
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:46
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:74
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:41
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:47
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:45
 msgid "Save"
 msgstr "Enregistrer"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:48
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:63
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:125
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:35
+msgid "chicken coop"
+msgstr "Poulailler"
+
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:35
+msgid "the brooding"
+msgstr "La poussinière"
+
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:48
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:64
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:126
 msgid "Type"
 msgstr "Type"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:50
-#, fuzzy
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:50
 msgid "Number of chicken coop"
-msgstr "Nombre de carton"
+msgstr "Numéro de poulailler"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:52
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:93
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:52
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:93
 msgid "Max"
-msgstr ""
+msgstr "Max"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:54
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:93
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:54
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:95
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:71
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:127
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:48
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:95
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:54
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:93
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:54
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:98
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:72
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:128
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:48
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:98
 msgid "Date"
 msgstr "Date"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:86
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:87
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:64
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:87
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:73
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:86
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:79
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:91
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:64
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:91
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:73
 msgid "Error"
 msgstr "Erreur"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:86
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:87
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:64
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:87
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:86
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:64
 msgid "Give the name of the store"
 msgstr "Donner le nom du magasin"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chickencoop.py:93
-msgid "Nom"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/chickencoop.py:93
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:35
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:71
+msgid "Name"
+msgstr "Nom"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:21
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:23
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:21
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:23
 msgid "chiks"
 msgstr "poussins"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:26
-#, fuzzy
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:26
 msgid "Table chiks"
 msgstr "Tableau des poussins"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:43
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:61
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:43
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:43
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:61
 #, python-format
 msgid "%(libelle)s"
 msgstr "%(libelle)s"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:48
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:94
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:54
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:48
 msgid "Nombre de sujet"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:50
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:94
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:50
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:94
-msgid "Poulailler"
-msgstr ""
-
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:52
-#: /home/fadiga/projets/syesoulou/soulou/ui/chiks.py:94
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:52
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:52
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:97
 msgid "Race"
-msgstr ""
+msgstr "Race"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/common.py:80
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:79
+#, python-format
+msgid "%s can take only %s chicks"
+msgstr "%s ne peut prendre que %s sujets"
+
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:91
+msgid "Give the number of the chiks"
+msgstr "Donner le nombre de poussins"
+
+#: /home/alou/projets/syesoulou/soulou/ui/chiks.py:97
+msgid "Number of chicks"
+msgstr "Nombre de poussins"
+
+#: /home/alou/projets/syesoulou/soulou/ui/common.py:80
 msgid "dd/MM/yyyy"
 msgstr "dd/MM/yyyy"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/common.py:132
+#: /home/alou/projets/syesoulou/soulou/ui/common.py:140
 msgid "TOTAL"
 msgstr "TOTAL"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/dashboard.py:18
-#: /home/fadiga/projets/syesoulou/soulou/ui/dashboard.py:23
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:33
+#: /home/alou/projets/syesoulou/soulou/ui/dashboard.py:19
+#: /home/alou/projets/syesoulou/soulou/ui/dashboard.py:26
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:33
 msgid "Dashboard"
 msgstr "Tableau de bord "
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/dashboard.py:25
-msgid "Les stocks actual"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/dashboard.py:33
+msgid "Current stocks"
+msgstr "Les stocks actuels"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/dashboard.py:32
-msgid "Etat"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/dashboard.py:38
+#: /home/alou/projets/syesoulou/soulou/ui/dashboard.py:55
+msgid "Status"
+msgstr "Etat"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:23
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:37
+#: /home/alou/projets/syesoulou/soulou/ui/dashboard.py:39
+msgid "Warning"
+msgstr "Avertissement"
+
+#: /home/alou/projets/syesoulou/soulou/ui/dashboard.py:54
+msgid "Start date"
+msgstr "Date de debut"
+
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:24
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:37
 msgid "Management reports"
 msgstr "Gestion des rapports"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:27
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:28
 msgid "Table rapports"
 msgstr "Tableau des rapports"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:65
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:125
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:44
+msgid "out"
+msgstr "Sortie"
+
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:66
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:126
 msgid "Store"
 msgstr "Magasin"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:67
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:125
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:68
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:126
 msgid "Product"
 msgstr "Produit"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:69
-msgid "Quantite utilise"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:70
+msgid "Quantity used"
+msgstr "Quantité uitilisée"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:78
-msgid "Ajout"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:79
+msgid "Add"
+msgstr "Ajouter"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:117
-msgid "Donnez le nbre de carton"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:118
+msgid "Give the quantity used"
+msgstr "Donner la quantité utilisée"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:126
-#, fuzzy
-msgid "Quantite"
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:127
+msgid "Quantity"
 msgstr "Quantité"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/gstockreports.py:126
+#: /home/alou/projets/syesoulou/soulou/ui/gstockreports.py:127
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:99
 msgid "Remaining"
 msgstr "Restant"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:20
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:20
 msgid "Stores"
 msgstr "Magasins"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:22
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:22
 msgid "The list of stores"
 msgstr "Liste des magasins"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:25
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:25
 msgid "Table stores"
 msgstr "Tableau des magasins"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:35
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:71
-msgid "Name"
-msgstr "Nom"
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:37
+msgid "Max quantity"
+msgstr "Quantité max"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:37
-#: /home/fadiga/projets/syesoulou/soulou/ui/magasins.py:71
-#, fuzzy
-msgid "Quantity maxi"
-msgstr "Quantité"
+#: /home/alou/projets/syesoulou/soulou/ui/magasins.py:71
+msgid "Quantity max"
+msgstr "Quantité max"
 
 #. Exit
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:31
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:30
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:31
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:30
 msgid "Exit"
 msgstr "Quiter"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:35
-#, fuzzy
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:35
 msgid "Produit"
 msgstr "Produits"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:40
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:40
 msgid "New chicken coop"
-msgstr ""
+msgstr "Nouveau poulailler"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:43
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:43
 msgid "News chiks"
 msgstr "Nouveaux poussins"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:47
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:78
-msgid "Suivi chiks"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:47
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:78
+msgid "Monitoring chiks"
+msgstr "Suivi de poussins"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:66
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:20
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:66
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:20
 msgid "Products"
 msgstr "Produits"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:70
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:70
 msgid "Management Reports"
 msgstr "Gestion des reports"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:74
-#, fuzzy
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:74
 msgid "Management chiks"
-msgstr "Gestion des rapports"
+msgstr "Gestion des poussins"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/mainwindow.py:82
-#, fuzzy
+#: /home/alou/projets/syesoulou/soulou/ui/mainwindow.py:82
 msgid "Management Chicken Coop"
-msgstr "Gestion des rapports"
+msgstr "Gestion des poulaillers"
 
 #. Menu File
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:21
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:23
 msgid "&File"
 msgstr "&Fichier"
 
 #. Export
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:23
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:25
 msgid "&Export data"
 msgstr "&Exporter les données"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:25
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:27
 msgid "Backup Database"
 msgstr "Dans un fichier db"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:27
-msgid "In an Excel file"
-msgstr "Dans un fichier Excel"
-
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:32
-msgid "Quiter l'application"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:32
+msgid "Exit the application"
+msgstr "Quitter l'application"
 
 #. Menu aller à
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:39
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:39
 msgid "&Go to"
 msgstr "Aller à"
 
 #. magasin
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:42
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:42
 msgid "New store"
 msgstr "Nouveau magasin"
 
+#. alerte
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:49
+msgid "Add alert"
+msgstr "Ajout alerte"
+
 #. Rapport periodique
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:49
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:56
 msgid "Periodic report"
 msgstr "Rapport periodique"
 
 #. Rapport inventaire
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:56
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:63
 msgid "Inventory"
 msgstr "Inventaire"
 
 #. Menu Aide
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:63
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:64
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:89
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:70
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:71
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:97
 msgid "help"
 msgstr "Aide"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:66
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:93
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:73
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:101
 msgid "About"
 msgstr "A propos"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:90
-msgid "Besoin d'aide"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:98
+msgid "Need Help"
+msgstr "Besoin d'aide"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/menubar.py:94
+#: /home/alou/projets/syesoulou/soulou/ui/menubar.py:102
 msgid ""
 "gestion de poulailler\n"
 "\n"
@@ -366,265 +426,263 @@ msgid ""
 "E-mail: ibfadiga@gmail.com"
 msgstr ""
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:21
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:23
-msgid "suivi"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:21
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:23
+msgid "Monitoring"
+msgstr "Suivi"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:26
-#, fuzzy
-msgid "Table suivi"
-msgstr "Tableau des produits"
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:26
+msgid "Table of monitored"
+msgstr "Tableau des suivis"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:94
-msgid "Mort"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:44
+#, python-format
+msgid "%(full_name)s"
+msgstr "%(full_name)s"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:94
-msgid "restant"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:50
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:98
+msgid "Chicken coop"
+msgstr "Poulaillers"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:95
-#, fuzzy
-msgid "Date rapport"
-msgstr "Tableau des rapports"
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:52
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:98
+msgid "Death"
+msgstr "Mort"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:95
-msgid "Oeufs"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:54
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:99
+msgid "Weight"
+msgstr "Poids"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/monitoring_chicks.py:95
-msgid "Poids"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:56
+msgid "Number of eggs"
+msgstr "Nombre d'oeufs"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:22
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:91
+msgid "Give the number of the death"
+msgstr "Donner le nombre de Mort"
+
+#: /home/alou/projets/syesoulou/soulou/ui/monitoring_chicks.py:99
+msgid "Eggs"
+msgstr "Oeufs"
+
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:22
 msgid "The list of products"
 msgstr "Liste des produits"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:25
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:25
 msgid "Table products"
 msgstr "Tableau des produits"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:31
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:31
+msgid "eggs"
+msgstr "oeufs"
+
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:31
 msgid "kg"
-msgstr ""
+msgstr "kg"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:31
-msgid "litre"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:31
+msgid "liter"
+msgstr "litre"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:31
-msgid "oeuf"
-msgstr ""
-
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:39
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:39
 msgid "Add product"
 msgstr " Ajout un produit"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:41
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:80
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:41
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:80
 msgid "Designation"
 msgstr "Designation"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:43
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:80
-msgid "Unite"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:43
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:80
+msgid "Unit"
+msgstr "Unité"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:67
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:67
 #, python-format
 msgid "The product %s  was recorded"
 msgstr "Le produit %s a été enregistré"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:71
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:71
 msgid "Give the room number in the box"
 msgstr "donner le nomber de pièce dans le carton"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/produits.py:73
+#: /home/alou/projets/syesoulou/soulou/ui/produits.py:73
 msgid "Give the name of the product"
 msgstr "Donner le nom du produit"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/report_period.py:18
-#: /home/fadiga/projets/syesoulou/soulou/ui/report_period.py:23
-#: /home/fadiga/projets/syesoulou/soulou/ui/report_period.py:25
-#: /home/fadiga/projets/syesoulou/soulou/ui/report_period.py:32
-msgid "Rapport"
-msgstr ""
+#: /home/alou/projets/syesoulou/soulou/ui/report_period.py:18
+#: /home/alou/projets/syesoulou/soulou/ui/report_period.py:23
+#: /home/alou/projets/syesoulou/soulou/ui/report_period.py:25
+#: /home/alou/projets/syesoulou/soulou/ui/report_period.py:32
+msgid "Report"
+msgstr "Rapport"
 
-#: /home/fadiga/projets/syesoulou/soulou/ui/statusbar.py:17
+#: /home/alou/projets/syesoulou/soulou/ui/statusbar.py:17
 msgid "Welcome!"
 msgstr "Bienvenue"
 
+#~ msgid "You can not do this because"
+#~ msgstr "Vous ne pouvez pas effectuer cette operation Car"
+
+#~ msgid "There were no entry for this product "
+#~ msgstr "Il n'y eu aucune entrée pour ce produit"
+
+#~ msgid "All reports"
+#~ msgstr "Tous les rapports"
+
+#~ msgid "TOTALS"
+#~ msgstr "TOTALS"
+
+#~ msgid "By store"
+#~ msgstr "Par magasin"
+
+#~ msgid "The reports of the store: %s"
+#~ msgstr "Les rapports pour le magasin: %s"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "By product"
+#~ msgstr "Par produit"
+
+#~ msgid "The reports of the product: %s"
+#~ msgstr "Les rapports pour le produit: %s"
+
+#~ msgid "Liste of Product"
+#~ msgstr "Liste des produits"
+
+#~ msgid "The list of products that the  rest is <100 cartons"
+#~ msgstr "Liste des produits dont le reste est < 100 cartons"
+
+#~ msgid "Table last operations"
+#~ msgstr "Tableau des dernières opérations"
+
+#~ msgid "The last operations"
+#~ msgstr "Les dernières opérations"
+
+#~ msgid "%x %Hh:%Mmn"
+#~ msgstr "%x %Hh:%Mmn"
+
+#~ msgid "Delete Confirmation"
+#~ msgstr "opération de suppression"
+
+#~ msgid "Do you want to delete?"
+#~ msgstr "Voulez-vous supprimer?"
+
+#~ msgid "The product %(product)s found in %(store)s save the %(date)s"
+#~ msgstr "Le produit %(product)s dans le  %(store)s enregistré le  %(date)s"
+
+#~ msgid "Deleted"
+#~ msgstr "Suppression"
+
+#~ msgid "Your report has been deleted"
+#~ msgstr "Votre rapport a été supprimé"
+
+#~ msgid "Change"
+#~ msgstr "Modification"
+
+#~ msgid "Do you want to change?"
+#~ msgstr "Voulez-vous modification?"
+
+#~ msgid "Store Name"
+#~ msgstr "Nom du Magasin"
+
+#~ msgid "number of rooms"
+#~ msgstr "Nombre de pièce dans le carton"
+
+#~ msgid "The product has been changing"
+#~ msgstr "Le produit a été bien modifié"
+
+#~ msgid "Edit report"
+#~ msgstr "Modification"
+
+#~ msgid "Your report has been amended"
+#~ msgstr "Votre rapport a été modifié"
+
+#~ msgid "add report"
+#~ msgstr "Ajouter un rapport"
+
+#~ msgid "Delete"
+#~ msgstr "Suppression"
+
+#~ msgid "Edit"
+#~ msgstr "Modifier"
+
+#~ msgid "Export xls"
+#~ msgstr "Export xls"
+
+#~ msgid "Exporter"
+#~ msgstr "Exporter les données"
+
+#~ msgid "Add opertion"
+#~ msgstr "Ajout d'opération"
+
+#~ msgid "Store Management"
+#~ msgstr "Gestion des magasins"
+
+#~ msgid "All Reports"
+#~ msgstr "Tous les rapports"
+
+#~ msgid "IL n'y eu aucun  input pour ce produit "
+#~ msgstr "IL n'y eu aucune  entrée pour ce produit "
+
+#~ msgid "ok"
+#~ msgstr "OK"
+
+#~ msgid " "
+#~ msgstr " "
+
+#~ msgid "Number carton"
+#~ msgstr "Nombre de carton"
+
+#~ msgid "Edited"
+#~ msgstr "Modification"
+
+#~ msgid "The Reports of:"
+#~ msgstr "Le rapport du: "
+
+#~ msgid "Story"
+#~ msgstr "Magasin"
+
+#~ msgid "Delete operation"
+#~ msgstr "opération de suppression"
+
+#~ msgid "The Reports of:  "
+#~ msgstr "Le rapport du: "
+
+#~ msgid "The Reports of: "
+#~ msgstr "Le rapport du: "
+
+#~ msgid " to "
+#~ msgstr "au"
+
 #, fuzzy
-#~ msgid "Management Poussin"
-#~ msgstr "Gestion des reports"
+#~ msgid "Number of poulailler"
+#~ msgstr "Nombre de carton"
 
 #, fuzzy
 #~ msgid "Management Poulailler"
 #~ msgstr "Gestion des reports"
 
 #, fuzzy
-#~ msgid "Number of poulailler"
-#~ msgstr "Nombre de carton"
+#~ msgid "Management Poussin"
+#~ msgstr "Gestion des reports"
 
-#~ msgid " to "
-#~ msgstr "au"
+#, fuzzy
+#~ msgid "Date rapport"
+#~ msgstr "Tableau des rapports"
 
-#~ msgid "Reports of "
-#~ msgstr "Le rapport du: "
+#, fuzzy
+#~ msgid "Table suivi"
+#~ msgstr "Tableau des produits"
 
-#~ msgid "The Reports of: "
-#~ msgstr "Le rapport du: "
+#~ msgid "In an Excel file"
+#~ msgstr "Dans un fichier Excel"
 
-#~ msgid "The Reports of:  "
-#~ msgstr "Le rapport du: "
-
-#~ msgid "Delete operation"
-#~ msgstr "opération de suppression"
-
-#~ msgid "Story"
-#~ msgstr "Magasin"
-
-#~ msgid "The Reports of:"
-#~ msgstr "Le rapport du: "
-
-#~ msgid "Edited"
-#~ msgstr "Modification"
-
-#~ msgid "Number carton"
-#~ msgstr "Nombre de carton"
-
-#~ msgid " "
-#~ msgstr " "
-
-#~ msgid "ok"
-#~ msgstr "OK"
-
-#~ msgid "IL n'y eu aucun  input pour ce produit "
-#~ msgstr "IL n'y eu aucune  entrée pour ce produit "
-
-#~ msgid "Number of rooms"
-#~ msgstr "Nombre de pièce dans le carton"
-
-#~ msgid "All Reports"
-#~ msgstr "Tous les rapports"
-
-#~ msgid "Store Management"
-#~ msgstr "Gestion des magasins"
-
-#~ msgid "Add opertion"
-#~ msgstr "Ajout d'opération"
-
-#~ msgid "Exporter"
-#~ msgstr "Exporter les données"
-
-#~ msgid "Export xls"
-#~ msgstr "Export xls"
-
-#~ msgid "Edit"
-#~ msgstr "Modifier"
-
-#~ msgid "Delete"
-#~ msgstr "Suppression"
-
-#~ msgid "add report"
-#~ msgstr "Ajouter un rapport"
-
-#~ msgid "Your report has been amended"
-#~ msgstr "Votre rapport a été modifié"
-
-#~ msgid "%(name)s"
-#~ msgstr "%(name)s"
-
-#~ msgid "Edit report"
-#~ msgstr "Modification"
-
-#~ msgid "The product has been changing"
-#~ msgstr "Le produit a été bien modifié"
-
-#~ msgid "number of rooms"
-#~ msgstr "Nombre de pièce dans le carton"
-
-#~ msgid "The store has been changing"
-#~ msgstr "Le magasin à été modifier"
-
-#~ msgid "Records the change"
-#~ msgstr "Enregister les modifications"
-
-#~ msgid "Store Name"
-#~ msgstr "Nom du Magasin"
-
-#~ msgid "Do you want to change?"
-#~ msgstr "Voulez-vous modification?"
-
-#~ msgid "Change"
-#~ msgstr "Modification"
-
-#~ msgid "Your report has been deleted"
-#~ msgstr "Votre rapport a été supprimé"
-
-#~ msgid "Cancel"
-#~ msgstr "Annuler"
-
-#~ msgid "Deleted"
-#~ msgstr "Suppression"
-
-#~ msgid "The product %(product)s found in %(store)s save the %(date)s"
-#~ msgstr "Le produit %(product)s dans le  %(store)s enregistré le  %(date)s"
-
-#~ msgid "Do you want to delete?"
-#~ msgstr "Voulez-vous supprimer?"
-
-#~ msgid "Delete Confirmation"
-#~ msgstr "opération de suppression"
-
-#~ msgid "%x %Hh:%Mmn"
-#~ msgstr "%x %Hh:%Mmn"
-
-#~ msgid "The last operations"
-#~ msgstr "Les dernières opérations"
-
-#~ msgid "Product warning"
-#~ msgstr "Avertissement sur les produit"
-
-#~ msgid "Table last operations"
-#~ msgstr "Tableau des dernières opérations"
-
-#~ msgid "The list of products that the  rest is <100 cartons"
-#~ msgstr "Liste des produits dont le reste est < 100 cartons"
-
-#~ msgid "Liste of Product"
-#~ msgstr "Liste des produits"
-
-#~ msgid "The reports of the product: %s"
-#~ msgstr "Les rapports pour le produit: %s"
-
-#~ msgid "By product"
-#~ msgstr "Par produit"
-
-#~ msgid "End date"
-#~ msgstr "date de fin"
-
-#~ msgid "On date"
-#~ msgstr "Date du debut"
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid "The reports of the store: %s"
-#~ msgstr "Les rapports pour le magasin: %s"
-
-#~ msgid "By store"
-#~ msgstr "Par magasin"
-
-#~ msgid "TOTALS"
-#~ msgstr "TOTALS"
-
-#~ msgid "All reports"
-#~ msgstr "Tous les rapports"
-
-#~ msgid "There were no entry for this product "
-#~ msgstr "Il n'y eu aucune entrée pour ce produit"
-
-#~ msgid "You can not do this because"
-#~ msgstr "Vous ne pouvez pas effectuer cette operation Car"
+#, fuzzy
+#~ msgid "Date fin"
+#~ msgstr "Date"

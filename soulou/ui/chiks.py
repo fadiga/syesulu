@@ -47,7 +47,7 @@ class ChiksViewWidget(F_Widget):
         self.nb_total_chiks.setValidator(QtGui.QIntValidator())
         editbox.addWidget(QtGui.QLabel((_(u"Nombre de sujet"))), 0, 0)
         editbox.addWidget(self.nb_total_chiks, 1, 0)
-        editbox.addWidget(QtGui.QLabel((_(u"Poulailler"))), 0, 1)
+        editbox.addWidget(QtGui.QLabel((_(u"Chicken Coop"))), 0, 1)
         editbox.addWidget(self.chicken_coop, 1, 1)
         editbox.addWidget(QtGui.QLabel((_(u"Race"))), 0, 2)
         editbox.addWidget(self.race, 1, 2)
@@ -76,8 +76,8 @@ class ChiksViewWidget(F_Widget):
 
         if unicode(self.nb_total_chiks.text()) != "" :
             if int(self.nb_total_chiks.text()) >= chicken_coop.nbr_sujet_maxi:
-                raise_error(_("Error"), _(u"%s ne peut prendre que %s sujets" \
-                        % (chicken_coop.full_name(), chicken_coop.nbr_sujet_maxi)))
+                raise_error(_("Error"), _(u"%s can take only %s chicks") \
+                    % (chicken_coop.full_name(), chicken_coop.nbr_sujet_maxi))
             else:
                 ps = PsArrivage()
                 ps.race = unicode(self.race.text())
@@ -94,7 +94,7 @@ class ChiksTableWidget(F_TableWidget):
 
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
-        self.header = [_(u"Race"), _(u"Poulailler"), _('Nombre de sujet'), \
+        self.header = [_(u"Race"), _(u"Chicken Coop"), _("Number of chicks"), \
                        _('Date')]
         self.set_data_for()
         self.refresh(True)

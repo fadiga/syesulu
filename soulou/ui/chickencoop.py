@@ -32,7 +32,7 @@ class ChickenCoopViewWidget(F_Widget):
         butt = Button_save(_(u"Save"))
 
 
-        liste_type = [u"chicken coop", u"poussinière"]
+        liste_type = [_(u"chicken coop"), _(u"the brooding")]
         #Combobox widget
         self.type_ = QtGui.QComboBox()
         for index in liste_type:
@@ -90,7 +90,7 @@ class ChickenCoopTableWidget(F_TableWidget):
 
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
-        self.header = [_(u"Nom"), _(u"Max"), _('Date')]
+        self.header = [_(u"Name"), _(u"Max"), _('Date')]
         self.set_data_for()
         self.refresh(True)
 
@@ -102,4 +102,5 @@ class ChickenCoopTableWidget(F_TableWidget):
 
     def set_data_for(self):
         self.data = [(p.__unicode__(), p.nbr_sujet_maxi,
-                      p.date) for p in ChickenCoop.all()]
+                      p.date) for p in ChickenCoop.select() \
+                                                  .order_by(('date', 'desc'))]

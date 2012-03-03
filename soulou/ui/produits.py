@@ -28,7 +28,7 @@ class ProduitViewWidget(F_Widget):
 
         self.libelle = QtGui.QLineEdit()
 
-        self.liste_unite = [_(u"kg"), _(u"oeuf"), _(u"litre")]
+        self.liste_unite = [_(u"kg"), _(u"eggs"), _(u"liter")]
         #Combobox widget
         self.box_unite = QtGui.QComboBox()
         for index in self.liste_unite:
@@ -40,7 +40,7 @@ class ProduitViewWidget(F_Widget):
 
         editbox.addWidget(QtGui.QLabel((_(u"Designation"))), 0, 0)
         editbox.addWidget(self.libelle, 1, 0)
-        editbox.addWidget(QtGui.QLabel((_(u"Unite"))), 0, 1)
+        editbox.addWidget(QtGui.QLabel((_(u"Unit"))), 0, 1)
         editbox.addWidget(self.box_unite, 1, 1)
         butt = Button_save(_(u"Save"))
         butt.clicked.connect(self.add_operation)
@@ -77,7 +77,7 @@ class ProduitTableWidget(F_TableWidget):
 
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
-        self.header = [_(u"Designation"), _(u"Unite")]
+        self.header = [_(u"Designation"), _(u"Unit")]
         self.set_data_for()
         self.refresh(True)
 

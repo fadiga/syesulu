@@ -41,7 +41,7 @@ class G_reportViewWidget(F_Widget):
 
             self.time = QtGui.QDateTimeEdit(QtCore.QTime.currentTime())
 
-            self.liste_type = [_(u"input"), _(u"inout")]
+            self.liste_type = [_(u"input"), _(u"out")]
             #Combobox widget
             self.box_type = QtGui.QComboBox()
             for index in self.liste_type:
@@ -60,14 +60,14 @@ class G_reportViewWidget(F_Widget):
                 op = self.liste_produit[index]
                 sentence = _(u"%(libelle)s") % {'libelle': op.libelle}
                 self.box_prod.addItem(sentence, QtCore.QVariant(op.id))
-                
+
             editbox.addWidget(QtGui.QLabel(_(u"Type")), 0, 0)
             editbox.addWidget(self.box_type, 1, 0)
             editbox.addWidget(QtGui.QLabel(_(u"Store")), 0, 1)
             editbox.addWidget(self.box_mag, 1, 1)
             editbox.addWidget(QtGui.QLabel(_(u"Product")), 0, 2)
             editbox.addWidget(self.box_prod, 1, 2)
-            editbox.addWidget(QtGui.QLabel((_(u"Quantite utilise"))), 0, 3)
+            editbox.addWidget(QtGui.QLabel((_(u"Quantity used"))), 0, 3)
             editbox.addWidget(self.qte_utilise, 1, 3)
             editbox.addWidget(QtGui.QLabel((_(u"Date"))), 0, 4)
             editbox.addWidget(self.date_, 1, 4)
@@ -76,7 +76,7 @@ class G_reportViewWidget(F_Widget):
             editbox.addWidget(butt, 1, 5)
             formbox.addLayout(editbox)
 
-        self.butt_add = Button_add(_(u"Ajout"))
+        self.butt_add = Button_add(_(u"Add"))
         self.butt_add.clicked.connect(edit_)
         editbox.addWidget(self.butt_add, 0, 6)
 
@@ -115,7 +115,7 @@ class G_reportViewWidget(F_Widget):
             self.qte_utilise.clear()
             self.table_op.refresh_()
         else:
-            raise_error(_(u"error"), _(u"Donnez le nbre de carton"))
+            raise_error(_(u"error"), _(u"Give the quantity used"))
 
 
 class StockRapTableWidget(F_TableWidget):
@@ -124,7 +124,7 @@ class StockRapTableWidget(F_TableWidget):
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
         self.header = [_(u"Type"), _(u"Store"), _(u"Product"), \
-                       _(u"Quantite"), _(u"Remaining"), \
+                       _(u"Quantity"), _(u"Remaining"), \
                        _(u"Date")]
         self.set_data_for()
         self.refresh(True)
@@ -140,7 +140,8 @@ class StockRapTableWidget(F_TableWidget):
                         formatted_number(rap.qte_utilise),
                         formatted_number(rap.restant),
                         rap.date_rapp.strftime(u'%x %Hh:%Mmn')) \
-                        for rap in StockRapport.select().order_by(('date_rapp', 'desc'))]
+                        for rap in StockRapport.select() \
+                                               .order_by(('date_rapp', 'desc'))]
 
     def _item_for_data(self, row, column, data, context=None):
         if column == 0 and self.data[row][0] == _("input"):

@@ -25,7 +25,7 @@ class Magasin(BaseModel):
     qte_maxi_stok = peewee.IntegerField(default=0)
 
     def __unicode__(self):
-        return (u"%(magasin)s") % {'magasin': self.name}
+        return (u"%(name)s") % {'name': self.name}
 
 
 class Produit(BaseModel):
@@ -72,8 +72,8 @@ class StockRapport(BaseModel):
             last_reports = None
 
         if last_reports == None and self.type_ == _(u"inout"):
-            raise_error(_(u"error"), _(u"Il n'existe aucun %s dans le magasin %s") %
-                                               (self.produit.libelle, self.magasin.name))
+            raise_error(_(u"error"), _(u"Il n'existe aucun %s dans le magasin %s") % \
+                                   (self.produit.libelle, self.magasin.name))
             return False
         if last_reports:
             previous_remaining = last_reports.restant
@@ -83,17 +83,17 @@ class StockRapport(BaseModel):
                 self.restant = previous_remaining - self.qte_utilise
                 if self.restant < 0:
                     print  self.qte_utilise, previous_remaining
-                    raise_error(_(u"error"), _(u"On peut pas utilisé %d puis qu'il ne reste que %d") %
-                                               (self.qte_utilise, previous_remaining))
+                    raise_error(_(u"error"), _(u"On peut pas utilisé %d puis qu'il ne reste que %d") % \
+                                       (self.qte_utilise, previous_remaining))
                     return False
         else:
             self.restant = self.qte_utilise
         super(StockRapport, self).save()
         raise_success(_(u"Confirmation"), _(u"Registered operation"))
         # ----------------------------------------------------------------#
-        next_reports = StockRapport.filter(produit__libelle=self.produit.libelle,
-                                      magasin__name=self.magasin.name,
-                                      date__gt=self.date_rapp).order_by(('date_rapp', 'asc'))
+        next_reports = StockRapport.filter(produit__libelle=self.produit \
+                                .libelle, magasin__name=self.magasin.name, \
+                        date__gt=self.date_rapp).order_by(('date_rapp', 'asc'))
         try:
             next_reports = next_reports.get()
         except:
@@ -124,8 +124,8 @@ class ChickenCoop(BaseModel):
 
     TYPE_POUL = 0 # blank created
     TYPE_POUS = 1 # started edition
-    TYPE= ((TYPE_POUL, u"poussiniere"),
-                (TYPE_POUS, u"poulailler"),)
+    TYPE= ((TYPE_POUL, u"Poulailler"),
+                (TYPE_POUS, u"Poussinière"),)
 
     type_ = peewee.IntegerField(default=TYPE_POUS)
     num = peewee.IntegerField(default=0)
@@ -169,8 +169,8 @@ class PsRapport(BaseModel):
         """
         Calcul du restant en stock après une operation."""
         from util import raise_success, raise_error
-        last_reports = PsRapport.filter(psarrivage__chicken_coop_id=self.psarrivage) \
-                                    .order_by(('date_report', 'desc'))
+        last_reports = PsRapport.filter(psarrivage__chicken_coop_id=self \
+                        .psarrivage).order_by(('date_report', 'desc'))
         previous_remaining = 0
         self.remaining = 0
         try:
@@ -183,7 +183,7 @@ class PsRapport(BaseModel):
             self.remaining = previous_remaining - self.nb_death
             if self.remaining < 0:
                 print  self.nb_death, previous_remaining
-                raise_error(_(u"error"), _(u"On peut pas utilisé %d puis qu'il ne reste que %d") %
+                raise_error(_(u"error"), _(u"On peut pas utilisé %d puis qu'il ne reste que %d") % \
                                            (self.nb_death, previous_remaining))
                 return False
         else:

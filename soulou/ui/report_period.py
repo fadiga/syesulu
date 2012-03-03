@@ -15,21 +15,21 @@ class ReportViewWidget(F_Widget):
         super(ReportViewWidget, self).__init__(parent=parent,
                                                         *args, **kwargs)
 
-        self.setWindowTitle(_(u"Rapport"))
+        self.setWindowTitle(_(u"Report"))
         vbox = QtGui.QVBoxLayout()
         box_left = QtGui.QHBoxLayout()
         box_rigth = QtGui.QHBoxLayout()
         table_etat = QtGui.QVBoxLayout()
-        self.title = F_PageTitle(_("Rapport"))
+        self.title = F_PageTitle(_("Report"))
 
-        self.title_etat = F_BoxTitle(_(u"Rapport"))
+        self.title_etat = F_BoxTitle(_(u"Report"))
 
         self.table_etat = EtatTableWidget(parent=self)
         vbox.addWidget(self.title)
         table_etat.addWidget(self.title_etat)
         table_etat.addWidget(self.table_etat)
 
-        tab_widget = tabbox((table_etat, _(u"Rapport")))
+        tab_widget = tabbox((table_etat, _(u"Report")))
 
         vbox.addWidget(tab_widget)
         self.setLayout(vbox)
