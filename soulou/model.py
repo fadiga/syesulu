@@ -45,7 +45,7 @@ class StockRapport(BaseModel):
     produit = peewee.ForeignKeyField(Produit)
     qte_utilise = peewee.IntegerField(default=0)
     restant = peewee.IntegerField(default=0)
-    date_rapp = peewee.DateTimeField(default=0)
+    date_rapp = peewee.DateTimeField(default=datetime.now())
     registered_on = datetime.now()
 
     def __unicode__(self):
@@ -110,12 +110,12 @@ class Alerte(BaseModel):
                 (STATUS_OFF, u"fait"),)
 
     objets = peewee.TextField()
-    date_debut = peewee.DateTimeField(default=0)
-    date_fin = peewee.DateTimeField(default=0)
-    status = peewee.IntegerField(default=STATUS_OFF)
+    date_debut = peewee.DateTimeField(default=datetime.now())
+    date_fin = peewee.DateTimeField(default=datetime.now())
+    status = peewee.IntegerField(default=STATUS_ON)
 
     def __unicode__(self):
-        return (u"%(alerte)s %(status") % {'alerte': self.objets,
+        return (u"%(alerte)s %(status)s") % {'alerte': self.objets,
                 'status': self.status}
 
 
@@ -130,7 +130,7 @@ class ChickenCoop(BaseModel):
     type_ = peewee.IntegerField(default=TYPE_POUS)
     num = peewee.IntegerField(default=0)
     nbr_sujet_maxi = peewee.IntegerField(default=0)
-    date = peewee.DateTimeField(default=0)
+    date = peewee.DateTimeField(default=datetime.now())
 
     def __unicode__(self):
         return (u"%(type_)s %(num)s") % \
@@ -146,7 +146,7 @@ class PsArrivage(BaseModel):
 
     race = peewee.CharField(max_length=50)
     nb_total_chiks = peewee.IntegerField(default=0)
-    arrival_date = peewee.DateTimeField(default=0)
+    arrival_date = peewee.DateTimeField(default=datetime.now())
     chicken_coop = peewee.ForeignKeyField(ChickenCoop)
 
     def __unicode__(self):
@@ -162,7 +162,7 @@ class PsRapport(BaseModel):
     nb_death = peewee.IntegerField(default=0)
     remaining = peewee.IntegerField(default=0)
     nb_eggs = peewee.IntegerField(default=0)
-    date_report = peewee.DateTimeField(default=0)
+    date_report = peewee.DateTimeField(default=datetime.now())
     weight = peewee.IntegerField(default=0)
 
     def __unicode__(self):

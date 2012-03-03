@@ -46,7 +46,7 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
         goto_.addAction(store)
 
         # alerte
-        alerte = QtGui.QAction(_(u"New store"), self)
+        alerte = QtGui.QAction(_(u"Ajout alert"), self)
         alerte.setShortcut("Ctrl+A")
         self.connect(alerte, QtCore.SIGNAL("triggered()"),
                                             self.goto_editalerte)
