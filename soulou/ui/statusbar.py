@@ -14,6 +14,6 @@ class GStatusBar(QtGui.QStatusBar):
 
         QtGui.QStatusBar.__init__(self, parent)
 
-        self.showMessage(_(u"Welcome!") + (" Dans Gstock"), 10000)
+        self.showMessage(_(u"Welcome!") + (" Dans Syesoulou"), 10000)
 
         self.setWindowOpacity(0.78)

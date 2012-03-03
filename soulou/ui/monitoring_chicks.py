@@ -75,16 +75,18 @@ class PsRapportViewWidget(F_Widget):
         datetime_ = datetime(int(year), int(month), int(day), int(dt.hour),
                              int(dt.minute), int(dt.second),
                              int(dt.microsecond))
-
         if unicode(self.nb_death.text()) != "":
             ps = PsRapport()
             ps.nb_death = int(self.nb_death.text())
+            ps.weight = int(self.weight.text())
             ps.nb_eggs = int(self.nb_eggs.text())
             ps.date_report = datetime_
-            ps.chickencoop = chicken_coop
+            ps.psarrivage = chicken_coop.id
             ps.save()
+            self.nb_death.clear()
+            self.nb_eggs.clear()
+            self.weight.clear()
             self.chiks_table.refresh_()
-            raise_success(_(u"Confirmation"), _(u"Registered operation"))
         else:
             raise_error(_("Error"), _(u"Give the name of the store"))
 
@@ -93,8 +95,8 @@ class ChiksTableWidget(F_TableWidget):
 
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
-        self.header = [_(u"Poulailler"), _('Mort'), _('restant'), \
-                       _('Oeufs'), _('Poids'), _('Date rapport')]
+        self.header = [_('Date rapport'), _(u"Poulailler"), _('Mort'), \
+                       _('restant'), _('Oeufs'), _('Poids')]
         self.set_data_for()
         self.refresh(True)
 
@@ -106,5 +108,6 @@ class ChiksTableWidget(F_TableWidget):
 
     def set_data_for(self):
 
-        self.data = [(ps.chickencoop.full_name(), ps.nb_death, ps.remaining,
-                      ps.nb_eggs, ps.date_report) for ps in PsRapport.all()]
+        self.data = [(ps.date_report, ps.psarrivage.chicken_coop.full_name(), \
+                      ps.nb_death, ps.remaining, ps.nb_eggs, ps.weight) \
+                      for ps in PsRapport.select().order_by(('date_report', 'desc'))]

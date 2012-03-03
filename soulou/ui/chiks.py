@@ -36,7 +36,7 @@ class ChiksViewWidget(F_Widget):
         self.date_arriver.setFont(QtGui.QFont("Courier New", 10, True))
 
         #Combobox widget
-        self.list_chicken_coop = ChickenCoop.all()
+        self.list_chicken_coop = list(ChickenCoop.select().filter(type_=0))
         self.chicken_coop = QtGui.QComboBox()
         for index in xrange(0, len(self.list_chicken_coop)):
             op = self.list_chicken_coop[index]
@@ -74,18 +74,21 @@ class ChiksViewWidget(F_Widget):
                              int(dt.hour), int(dt.minute), int(dt.second),
                              int(dt.microsecond))
 
-        if unicode(self.nb_total_chiks.text()) != "":
-            ps = PsArrivage()
-            ps.race = unicode(self.race.text())
-            ps.nb_total_chiks = int(self.nb_total_chiks.text())
-            ps.arrival_date = datetime_
-            ps.chicken_coop = chicken_coop
-            ps.save()
-            self.chiks_table.refresh_()
-            raise_success(_(u"Confirmation"), _(u"Registered operation"))
+        if unicode(self.nb_total_chiks.text()) != "" :
+            if int(self.nb_total_chiks.text()) >= chicken_coop.nbr_sujet_maxi:
+                raise_error(_("Error"), _(u"%s ne peut prendre que %s sujets" \
+                        % (chicken_coop.full_name(), chicken_coop.nbr_sujet_maxi)))
+            else:
+                ps = PsArrivage()
+                ps.race = unicode(self.race.text())
+                ps.nb_total_chiks = int(self.nb_total_chiks.text())
+                ps.arrival_date = datetime_
+                ps.chicken_coop = chicken_coop
+                ps.save()
+                self.chiks_table.refresh_()
+                raise_success(_(u"Confirmation"), _(u"Registered operation"))
         else:
-            raise_error(_("Error"), _(u"Give the name of the store"))
-
+            raise_error(_("Error"), _(u"Give the number of the chiks"))
 
 class ChiksTableWidget(F_TableWidget):
 

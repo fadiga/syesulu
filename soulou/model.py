@@ -124,7 +124,7 @@ class ChickenCoop(BaseModel):
 
     TYPE_POUL = 0 # blank created
     TYPE_POUS = 1 # started edition
-    TYPE= ((TYPE_POUL, u"poussinière"),
+    TYPE= ((TYPE_POUL, u"poussiniere"),
                 (TYPE_POUS, u"poulailler"),)
 
     type_ = peewee.IntegerField(default=TYPE_POUS)
@@ -158,14 +158,53 @@ class PsArrivage(BaseModel):
 class PsRapport(BaseModel):
     """docstring for PsPoulalle"""
 
-    chickencoop = peewee.ForeignKeyField(ChickenCoop)
+    psarrivage = peewee.ForeignKeyField(PsArrivage)
     nb_death = peewee.IntegerField(default=0)
     remaining = peewee.IntegerField(default=0)
     nb_eggs = peewee.IntegerField(default=0)
     date_report = peewee.DateTimeField(default=0)
     weight = peewee.IntegerField(default=0)
 
+    def save(self):
+        """
+        Calcul du restant en stock après une operation."""
+        from util import raise_success, raise_error
+        last_reports = PsRapport.filter(psarrivage__chicken_coop_id=self.psarrivage) \
+                                    .order_by(('date_report', 'desc'))
+        previous_remaining = 0
+        self.remaining = 0
+        try:
+            last_report = last_reports.get()
+        except:
+            last_report = None
+
+        if last_report:
+            previous_remaining = last_report.remaining
+            self.remaining = previous_remaining - self.nb_death
+            if self.remaining < 0:
+                print  self.nb_death, previous_remaining
+                raise_error(_(u"error"), _(u"On peut pas utilisé %d puis qu'il ne reste que %d") %
+                                           (self.nb_death, previous_remaining))
+                return False
+        else:
+            self.remaining = self.psarrivage.nb_total_chiks
+
+        super(PsRapport, self).save()
+        raise_success(_(u"Confirmation"), _(u"Registered operation"))
+        # ----------------------------------------------------------------#
+        next_reports = PsRapport.filter(psarrivage=self.psarrivage, \
+                                        date_report__gt=self.date_report) \
+                                .order_by(('date_report', 'asc'))
+
+        try:
+            next_reports = next_reports.get()
+        except:
+            next_reports = None
+
+        if next_reports:
+            next_reports.save()
+
     def __unicode__(self):
-        return (u"%(chickencoop)s %(remaining)s %(date_report)s") % \
-                {'chickencoop': self.chickencoop, 'remaining' : self.remaining,
+        return (u" %(remaining)s %(date_report)s") % \
+                {'psarrivage': self.psarrivage, 'remaining' : self.remaining,
                  'date_report': self.date_report}
