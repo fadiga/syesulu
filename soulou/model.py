@@ -169,8 +169,10 @@ class PsRapport(BaseModel):
         """
         Calcul du restant en stock après une operation."""
         from util import raise_success, raise_error
-        last_reports = PsRapport.filter(psarrivage__chicken_coop_id=self \
-                        .psarrivage).order_by(('date_report', 'desc'))
+        try:
+            last_reports = PsRapport.filter(psarrivage__chicken_coop_id=self.psarrivage).order_by(('date_report', 'desc'))
+        except:
+            raise_error(_("Error"), _(u"Give the number of the death"))
         previous_remaining = 0
         self.remaining = 0
         try:
