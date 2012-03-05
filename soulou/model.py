@@ -104,19 +104,14 @@ class StockRapport(BaseModel):
 class Alerte(BaseModel):
     """docstring for Alerte"""
 
-    STATUS_ON = 0 # blank created
-    STATUS_OFF = 1 # started edition
-    STATUSES = ((STATUS_ON, u"Commencé"),
-                (STATUS_OFF, u"fait"),)
-
     objets = peewee.TextField()
-    date_debut = peewee.DateTimeField(default=datetime.now())
-    date_fin = peewee.DateTimeField(default=datetime.now())
-    status = peewee.IntegerField(default=STATUS_ON)
+    date_debut = peewee.DateTimeField(default=datetime.today())
+    date_fin = peewee.DateTimeField(default=datetime.today())
+    status = peewee.BooleanField(default=True)
 
     def __unicode__(self):
-        return (u"%(alerte)s %(status)s") % {'alerte': self.objets,
-                'status': self.status}
+        return (u"%(alerte)s %(status)s") % {u'alerte': self.objets,
+                u'status': self.status}
 
 
 class ChickenCoop(BaseModel):
