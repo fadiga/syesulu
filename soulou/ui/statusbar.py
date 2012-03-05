@@ -17,3 +17,4 @@ class GStatusBar(QtGui.QStatusBar):
         self.showMessage(_(u"Welcome!") + (" Dans Syesoulou"), 10000)
 
         self.setWindowOpacity(0.78)
+

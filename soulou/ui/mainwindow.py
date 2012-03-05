@@ -16,6 +16,8 @@ from monitoring_chicks import PsRapportViewWidget
 from chickencoop import ChickenCoopViewWidget
 from menubar import MenuBar
 from statusbar import GStatusBar
+from data_helper import alerte
+from showalerte import ShowAlViewWidget
 
 
 class MainWindow(QtGui.QMainWindow):
@@ -26,6 +28,10 @@ class MainWindow(QtGui.QMainWindow):
         self.setWindowTitle(u"Gestion du poulailer")
         self.setWindowIcon(QtGui.QIcon('images/eggs.ico'))
 
+        self.toolbar2 = QtGui.QToolBar()
+        self.toolbar2.setStyleSheet("background-color: rgb(255, 255, 255);color: rgb(255, 45, 8);")
+        self.alerte = alerte()
+        self.update()
         self.toolbar = QtGui.QToolBar()
         self.toolbar.addAction(QtGui.QIcon('images/quiter.png'), \
                                                     _(u"Exit"), self.goto_exit)
@@ -55,9 +61,29 @@ class MainWindow(QtGui.QMainWindow):
 
         self.change_context(DashbordViewWidget)
 
+        self.startTimer(2000)
+
+    def timerEvent(self, event):
+        al = alerte()
+        if len(self.alerte) != len(al):
+            self.update()
+
+    def update(self):
+        al = alerte()
+        if len(al) != 0:
+            self.toolbar2.addAction(QtGui.QIcon('images/war.png'),
+                                    str([i.objets for i in al]), 
+                                    self.goto_alerte)
+            self.addToolBar(self.toolbar2)
+        self.alerte = alerte()
+
     def goto_exit(self):
         self.close()
 
+    def goto_alerte(self):
+        self.setWindowTitle(u"Show alert")
+        self.change_context(ShowAlViewWidget)
+        
     def accueil(self):
         self.setWindowTitle(u"Accueil")
         self.change_context(DashbordViewWidget)

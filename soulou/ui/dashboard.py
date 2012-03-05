@@ -41,7 +41,7 @@ class DashbordViewWidget(F_Widget):
         vbox.addWidget(self.title)
         vbox.addWidget(tab_widget)
         self.setLayout(vbox)
-
+        
 
 class EtatTableWidget(F_TableWidget):
     pass
@@ -64,7 +64,7 @@ class AlertTableWidget(F_TableWidget):
 
     def set_data_for(self):
 
-        self.data = [(al.objets, al.date_debut.strftime(u'%x %Hh:%Mmn'), 
-                      al.date_fin.strftime(u'%x %Hh:%Mmn'), al.status)
+        self.data = [(al.objets, al.date_debut.strftime(u'%x'), 
+                      al.date_fin.strftime(u'%x'), al.status)
                                                     for al in Alerte.all()]
 

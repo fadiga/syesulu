@@ -19,7 +19,7 @@ class AlertViewWidget(QtGui.QDialog, F_Widget):
         vbox = QtGui.QVBoxLayout()
         vbox.addWidget(F_BoxTitle(_(u"Créer une Alerte")))
         self.objets = QtGui.QTextEdit()
-        self.on_date = FormatDate(QtCore.QDate(date.today().year, 01, 01))
+        self.on_date = FormatDate(QtCore.QDate.currentDate())
         self.end_date = FormatDate(QtCore.QDate.currentDate())
 
         vbox = QtGui.QVBoxLayout()
