@@ -29,10 +29,13 @@ class MainWindow(QtGui.QMainWindow):
         self.setWindowIcon(QtGui.QIcon('images/eggs.ico'))
 
         self.toolbar2 = QtGui.QToolBar()
-        self.toolbar2.setStyleSheet("background-color: rgb(255, 255, 255);color: rgb(255, 45, 8);")
+        self.toolbar2.setStyleSheet("color: rgb(255, 45, 8);")
+        # self.toolbar2.setTabPosition(QtGui.QTabWidget.West)
         self.alerte = alerte()
         self.update()
         self.toolbar = QtGui.QToolBar()
+        self.toolbar.setEnabled(True)
+        self.toolbar.setOrientation(QtCore.Qt.Vertical)
         self.toolbar.addAction(QtGui.QIcon('images/quiter.png'), \
                                                     _(u"Exit"), self.goto_exit)
         self.toolbar.addSeparator()
@@ -61,7 +64,7 @@ class MainWindow(QtGui.QMainWindow):
 
         self.change_context(DashbordViewWidget)
 
-        self.startTimer(2000)
+        self.startTimer(5000)
 
     def timerEvent(self, event):
         al = alerte()
@@ -74,7 +77,7 @@ class MainWindow(QtGui.QMainWindow):
             self.toolbar2.addAction(QtGui.QIcon('images/war.png'),
                                     str([i.objets for i in al]), 
                                     self.goto_alerte)
-            self.addToolBar(self.toolbar2)
+            self.addToolBar(QtCore.Qt.LeftToolBarArea, self.toolbar2)
         self.alerte = alerte()
 
     def goto_exit(self):

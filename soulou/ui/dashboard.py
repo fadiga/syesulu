@@ -68,3 +68,14 @@ class AlertTableWidget(F_TableWidget):
                       al.date_fin.strftime(u'%x'), al.status)
                                                     for al in Alerte.all()]
 
+    def _item_for_data(self, row, column, data, context=None):
+        if column == 3 and self.data[row][3] == 0:
+            return QtGui.QTableWidgetItem(QtGui.QIcon("images/tick.ico"),
+                                                      u"")
+        if column == 3 and self.data[row][3] == 1:
+            return QtGui.QTableWidgetItem(QtGui.QIcon("images/star.ico"),
+                                                      u"")
+
+        return super(AlertTableWidget, self)\
+                                            ._item_for_data(row, column, \
+                                                        data, context)
