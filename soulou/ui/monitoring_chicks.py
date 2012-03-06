@@ -72,9 +72,11 @@ class PsRapportViewWidget(F_Widget):
         day, month, year = date_.split('/')
         dt = datetime.now()
         chicken_coop = self.list_chicken_coop[self.chicken_coop.currentIndex()]
+        print chicken_coop.id
         datetime_ = datetime(int(year), int(month), int(day), int(dt.hour),
                              int(dt.minute), int(dt.second),
                              int(dt.microsecond))
+
         if unicode(self.nb_death.text()) != "":
             ps = PsRapport()
             ps.nb_death = int(self.nb_death.text())
@@ -110,4 +112,5 @@ class ChiksTableWidget(F_TableWidget):
 
         self.data = [(ps.date_report, ps.psarrivage.chicken_coop.full_name(), \
                       ps.nb_death, ps.remaining, ps.nb_eggs, ps.weight) \
-                      for ps in PsRapport.select().order_by(('date_report', 'desc'))]
+                      for ps in PsRapport.select() \
+                                         .order_by(('date_report', 'desc'))]

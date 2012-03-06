@@ -36,7 +36,7 @@ class ChiksViewWidget(F_Widget):
         self.date_arriver.setFont(QtGui.QFont("Courier New", 10, True))
 
         #Combobox widget
-        self.list_chicken_coop = list(ChickenCoop.select().filter(type_=0))
+        self.list_chicken_coop = list(ChickenCoop.select().filter(type_=1))
         self.chicken_coop = QtGui.QComboBox()
         for index in xrange(0, len(self.list_chicken_coop)):
             op = self.list_chicken_coop[index]

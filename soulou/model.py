@@ -72,8 +72,9 @@ class StockRapport(BaseModel):
             last_reports = None
 
         if last_reports == None and self.type_ == _(u"inout"):
-            raise_error(_(u"error"), _(u"Il n'existe aucun %s dans le magasin %s") % \
-                                   (self.produit.libelle, self.magasin.name))
+            raise_error(_(u"error"), \
+                        _(u"Il n'existe aucun %s dans le magasin %s") % \
+                        (self.produit.libelle, self.magasin.name))
             return False
         if last_reports:
             previous_remaining = last_reports.restant
@@ -165,7 +166,8 @@ class PsRapport(BaseModel):
         Calcul du restant en stock après une operation."""
         from util import raise_success, raise_error
         try:
-            last_reports = PsRapport.filter(psarrivage__chicken_coop_id=self.psarrivage).order_by(('date_report', 'desc'))
+            last_reports = PsRapport.filter(psarrivage__chicken_coop_id= \
+                           self.psarrivage).order_by(('date_report', 'desc'))
         except:
             raise_error(_("Error"), _(u"Give the number of the death"))
         previous_remaining = 0
@@ -179,12 +181,12 @@ class PsRapport(BaseModel):
             previous_remaining = last_report.remaining
             self.remaining = previous_remaining - self.nb_death
             if self.remaining < 0:
-                print  self.nb_death, previous_remaining
-                raise_error(_(u"error"), _(u"On peut pas utilisé %d puis qu'il ne reste que %d") % \
-                                           (self.nb_death, previous_remaining))
+                raise_error(_(u"error"), \
+                    _(u"On peut pas utilisé %d puis qu'il ne reste que %d") % \
+                    (self.nb_death, previous_remaining))
                 return False
         else:
-            self.remaining = self.psarrivage.nb_total_chiks
+            self.remaining = self.psarrivage.nb_total_chiks - self.nb_death
 
         super(PsRapport, self).save()
         raise_success(_(u"Confirmation"), _(u"Registered operation"))
