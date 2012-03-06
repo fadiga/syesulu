@@ -25,18 +25,18 @@ class DashbordViewWidget(F_Widget):
 
         self.title = F_PageTitle(_("Dashboard"))
 
-        self.title_alert = F_BoxTitle(_(u"Les alertes "))
+        self.title_alert = F_BoxTitle(_(u"Alerts"))
         self.table_alert = AlertTableWidget(parent=self)
-        table_alert.addWidget(self.title_alert) 
+        table_alert.addWidget(self.title_alert)
         table_alert.addWidget(self.table_alert)
 
-        self.title_etat = F_BoxTitle(_(u"Les stocks actual"))
+        self.title_etat = F_BoxTitle(_(u"Current stocks"))
         self.table_etat = EtatTableWidget(parent=self)
         table_etat.addWidget(self.title_etat)
         table_etat.addWidget(self.table_etat)
 
-        tab_widget = tabbox((table_etat, _(u"Etat")),
-                            (table_alert, _(u"warning")))
+        tab_widget = tabbox((table_etat, _(u"Status")),
+                            (table_alert, _(u"Warning")))
 
         vbox.addWidget(self.title)
         vbox.addWidget(tab_widget)
@@ -51,7 +51,7 @@ class AlertTableWidget(F_TableWidget):
 
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
-        self.header = [_(u"Objets"), _(u"Date debut"), _('Date fin')
+        self.header = [_(u"Objets"), _(u"Start date"), _('End date')
                       , _('Status')]
         self.set_data_for()
         self.refresh(True)
@@ -64,8 +64,8 @@ class AlertTableWidget(F_TableWidget):
 
     def set_data_for(self):
 
-        self.data = [(al.objets, al.date_debut.strftime(u'%x'), 
-                      al.date_fin.strftime(u'%x'), al.status)
+        self.data = [(al.objets, al.date_debut.strftime(u'%x %Hh:%Mmn'),
+                      al.date_fin.strftime(u'%x %Hh:%Mmn'), al.status)
                                                     for al in Alerte.all()]
 
     def _item_for_data(self, row, column, data, context=None):
