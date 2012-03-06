@@ -6,7 +6,7 @@ import os
 import shutil
 from datetime import datetime
 
-from PyQt4 import QtGui, QtCore
+from PyQt4 import QtGui
 
 import model
 from util import raise_success, raise_error

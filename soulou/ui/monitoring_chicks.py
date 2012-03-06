@@ -3,12 +3,13 @@
 # maintainer: alou
 
 from datetime import datetime
+
 from PyQt4 import QtGui, QtCore
-from database import *
+
+from database import PsRapport, ChickenCoop
 from common import (F_Widget, F_PageTitle, F_TableWidget, F_BoxTitle,
                     Button_save, FormatDate, IntLineEdit, FloatLineEdit)
-from util import raise_success, raise_error
-from tabpane import tabbox
+from util import raise_error
 
 
 class PsRapportViewWidget(F_Widget):

@@ -7,8 +7,8 @@ from PyQt4 import QtCore
 
 from common import (F_Widget, F_BoxTitle, Button_save,
                     FormatDate, FormLabel)
-from util import raise_error, raise_success
-from model import *
+from util import raise_success
+from model import Alerte
 from data_helper import format_date
 
 class AlertViewWidget(QtGui.QDialog, F_Widget):

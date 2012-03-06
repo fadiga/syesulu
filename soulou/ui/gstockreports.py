@@ -7,13 +7,10 @@ from datetime import datetime
 
 from PyQt4 import QtGui, QtCore
 
-from model import *
-from common import (F_Widget, F_PageTitle, F_TableWidget,
-                    F_BoxTitle, Button_add, Button_save, FormatDate,
-                    IntLineEdit)
+from model import StockRapport, Magasin, Produit
+from common import (F_Widget, F_TableWidget, F_BoxTitle,
+                    Button_save, FormatDate, IntLineEdit)
 from util import raise_success, raise_error, formatted_number
-from magasins import MagasinViewWidget
-from produits import ProduitViewWidget
 
 
 class G_reportViewWidget(F_Widget):
@@ -108,6 +105,7 @@ class G_reportViewWidget(F_Widget):
             strap.save()
             self.qte_utilise.clear()
             self.table_op.refresh_()
+            raise_success(_(u"Confirmation"), _(u"Registered operation"))
         else:
             raise_error(_(u"error"), _(u"Donnez le nbre de carton"))
 

@@ -5,12 +5,9 @@
 from PyQt4 import QtGui, QtCore
 
 from common import F_Widget
-from dashboard import DashbordViewWidget
 from magasins import MagasinViewWidget
 from report_period import ReportViewWidget
-from chiks import ChiksViewWidget
 from exports import export_database_as_file
-from chickencoop import ChickenCoopViewWidget
 from alerteview import AlertViewWidget
 
 

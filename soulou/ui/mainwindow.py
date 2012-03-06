@@ -6,10 +6,8 @@ import sys
 
 from PyQt4 import QtGui, QtCore
 
-from model import *
 from gstockreports import G_reportViewWidget
 from dashboard import DashbordViewWidget
-from magasins import MagasinViewWidget
 from produits import ProduitViewWidget
 from chiks import ChiksViewWidget
 from monitoring_chicks import PsRapportViewWidget

@@ -6,7 +6,7 @@ from PyQt4 import QtGui
 
 from common import F_Widget, F_PageTitle, F_TableWidget, F_BoxTitle
 from tabpane import tabbox
-from model import *
+from model import Alerte
 
 
 class DashbordViewWidget(F_Widget):

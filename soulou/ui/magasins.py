@@ -2,11 +2,9 @@
 # -*- coding: utf-8 -*-
 #maintainer: Fad
 
+from PyQt4 import QtGui
 
-from datetime import datetime
-from PyQt4 import QtGui, QtCore
-
-from database import *
+from database import Magasin
 from common import (F_Widget, F_PageTitle, F_TableWidget, F_BoxTitle,
                     Button_save, IntLineEdit)
 from util import raise_success, raise_error

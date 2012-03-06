@@ -3,7 +3,7 @@
 #maintainer : Fad
 
 from datetime import datetime
-from model import *
+from model import Magasin, StockRapport, Produit
 
 m = Magasin(name=u"magasin aliment", qte_maxi_stok=5000)
 m.save()
