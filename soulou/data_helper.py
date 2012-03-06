@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 # maintainer: Fadiga
 
-import time
-
-from datetime import date, timedelta, datetime
+from datetime import datetime
 
 from model import Alerte
 

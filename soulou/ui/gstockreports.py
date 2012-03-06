@@ -7,13 +7,10 @@ from datetime import datetime
 
 from PyQt4 import QtGui, QtCore
 
-from model import *
-from common import (F_Widget, F_PageTitle, F_TableWidget,
-                    F_BoxTitle, Button_add, Button_save, FormatDate,
-                    IntLineEdit)
+from model import StockRapport, Magasin, Produit
+from common import (F_Widget, F_TableWidget, F_BoxTitle,
+                    Button_save, FormatDate, IntLineEdit)
 from util import raise_success, raise_error, formatted_number
-from magasins import MagasinViewWidget
-from produits import ProduitViewWidget
 
 
 class G_reportViewWidget(F_Widget):
@@ -40,7 +37,7 @@ class G_reportViewWidget(F_Widget):
 
         self.time = QtGui.QDateTimeEdit(QtCore.QTime.currentTime())
 
-        self.liste_type = [_(u"input"), _(u"inout")]
+        self.liste_type = [_(u"input"), _(u"out")]
         #Combobox widget
         self.box_type = QtGui.QComboBox()
         for index in self.liste_type:
@@ -108,8 +105,9 @@ class G_reportViewWidget(F_Widget):
             strap.save()
             self.qte_utilise.clear()
             self.table_op.refresh_()
+            raise_success(_(u"Confirmation"), _(u"Registered operation"))
         else:
-            raise_error(_(u"error"), _(u"Donnez le nbre de carton"))
+            raise_error(_(u"error"), _(u"Give the quantity used"))
 
 
 class StockRapTableWidget(F_TableWidget):
@@ -118,7 +116,7 @@ class StockRapTableWidget(F_TableWidget):
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
         self.header = [_(u"Type"), _(u"Store"), _(u"Product"), \
-                       _(u"Quantite"), _(u"Remaining"), \
+                       _(u"Quantity"), _(u"Remaining"), \
                        _(u"Date")]
         self.set_data_for()
         self.refresh(True)
@@ -134,7 +132,8 @@ class StockRapTableWidget(F_TableWidget):
                         formatted_number(rap.qte_utilise),
                         formatted_number(rap.restant),
                         rap.date_rapp.strftime(u'%x %Hh:%Mmn')) \
-                        for rap in StockRapport.select().order_by(('date_rapp', 'desc'))]
+                        for rap in StockRapport.select() \
+                                               .order_by(('date_rapp', 'desc'))]
 
     def _item_for_data(self, row, column, data, context=None):
         if column == 0 and self.data[row][0] == _("input"):

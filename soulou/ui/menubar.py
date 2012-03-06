@@ -5,12 +5,9 @@
 from PyQt4 import QtGui, QtCore
 
 from common import F_Widget
-from dashboard import DashbordViewWidget
 from magasins import MagasinViewWidget
 from report_period import ReportViewWidget
-from chiks import ChiksViewWidget
 from exports import export_database_as_file
-from chickencoop import ChickenCoopViewWidget
 from alerteview import AlertViewWidget
 
 
@@ -29,7 +26,7 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
         # Exit
         exit_ = QtGui.QAction(_(u"Exit"), self)
         exit_.setShortcut("Ctrl+Q")
-        exit_.setToolTip(_("Quiter l'application"))
+        exit_.setToolTip(_("Exit the application"))
         self.connect(exit_, QtCore.SIGNAL("triggered()"), \
                                          self.parentWidget(), \
                                          QtCore.SLOT("close()"))
@@ -46,7 +43,7 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
         goto_.addAction(store)
 
         # alerte
-        alerte = QtGui.QAction(_(u"Ajout alert"), self)
+        alerte = QtGui.QAction(_(u"Add alert"), self)
         alerte.setShortcut("Ctrl+A")
         self.connect(alerte, QtCore.SIGNAL("triggered()"),
                                             self.goto_editalerte)
@@ -95,7 +92,7 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
     #Aide
     def goto_help(self):
         mbox = QtGui.QMessageBox.about(self, _(u"help"),
-                                       _(u"Besoin d'aide"))
+                                       _(u"Need Help"))
     #About
     def goto_about(self):
         mbox = QtGui.QMessageBox.about(self, _(u"About"),

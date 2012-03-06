@@ -7,17 +7,17 @@ from PyQt4 import QtCore
 
 from common import (F_Widget, F_BoxTitle, Button_save,
                     FormatDate, FormLabel)
-from util import raise_error, raise_success
-from model import *
+from util import raise_success
+from model import Alerte
 from data_helper import format_date
 
 class AlertViewWidget(QtGui.QDialog, F_Widget):
     def __init__(self, parent, *args, **kwargs):
         QtGui.QDialog.__init__(self, parent, *args, **kwargs)
-        self.setWindowTitle(_(u"Alertes"))
+        self.setWindowTitle(_(u"Alerts"))
 
         vbox = QtGui.QVBoxLayout()
-        vbox.addWidget(F_BoxTitle(_(u"Créer une Alerte")))
+        vbox.addWidget(F_BoxTitle(_(u"Create Alert")))
         self.objets = QtGui.QTextEdit()
         self.on_date = FormatDate(QtCore.QDate.currentDate())
         self.end_date = FormatDate(QtCore.QDate.currentDate())
@@ -25,7 +25,7 @@ class AlertViewWidget(QtGui.QDialog, F_Widget):
         vbox = QtGui.QVBoxLayout()
         # Grid
         gridbox = QtGui.QGridLayout()
-        gridbox.addWidget(FormLabel(_(u"objets")), 0, 0)
+        gridbox.addWidget(FormLabel(_(u"Objets")), 0, 0)
         gridbox.addWidget(self.objets, 0, 1)
         gridbox.addWidget(FormLabel(_(u"On date")), 1, 0)
         gridbox.addWidget(self.on_date, 1, 1)

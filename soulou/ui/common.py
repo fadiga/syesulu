@@ -4,8 +4,7 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import Qt
-from datetime import *
-
+from datetime import date
 from util import formatted_number
 
 MAIN_WIDGET_SIZE = 1200

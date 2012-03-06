@@ -2,11 +2,9 @@
 # -*- coding: utf-8 -*-
 #maintainer: Fad
 
+from PyQt4 import QtGui
 
-from datetime import datetime
-from PyQt4 import QtGui, QtCore
-
-from database import *
+from database import Magasin
 from common import (F_Widget, F_PageTitle, F_TableWidget, F_BoxTitle,
                     Button_save, IntLineEdit)
 from util import raise_success, raise_error
@@ -34,7 +32,7 @@ class MagasinViewWidget(F_Widget):
 
         editbox.addWidget(QtGui.QLabel((_(u"Name"))), 0, 0)
         editbox.addWidget(self.name, 1, 0)
-        editbox.addWidget(QtGui.QLabel((_(u"Quantity maxi"))), 0, 1)
+        editbox.addWidget(QtGui.QLabel((_(u"Max quantity"))), 0, 1)
         editbox.addWidget(self.qte_maxi_stok, 1, 1)
         editbox.setColumnStretch(0, 2)
         editbox.setColumnStretch(3, 2)
@@ -68,7 +66,7 @@ class MagasinTableWidget(F_TableWidget):
 
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
-        self.header = [_(u"Name"), _(u"Quantity maxi")]
+        self.header = [_(u"Name"), _(u"Quantity max")]
         self.set_data_for()
         self.refresh(True)
 

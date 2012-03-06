@@ -6,10 +6,9 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 from common import (F_Widget, F_BoxTitle, Button, Button_save,
-                    FormatDate, FormLabel, F_TableWidget)
-from util import raise_error, raise_success
-from model import *
-from data_helper import format_date, alerte
+                    F_TableWidget)
+from data_helper import alerte
+from model import Alerte
 
 
 class ShowAlViewWidget(QtGui.QDialog, F_Widget):

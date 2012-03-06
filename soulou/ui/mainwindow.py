@@ -6,10 +6,8 @@ import sys
 
 from PyQt4 import QtGui, QtCore
 
-from model import *
 from gstockreports import G_reportViewWidget
 from dashboard import DashbordViewWidget
-from magasins import MagasinViewWidget
 from produits import ProduitViewWidget
 from chiks import ChiksViewWidget
 from monitoring_chicks import PsRapportViewWidget
@@ -25,7 +23,7 @@ class MainWindow(QtGui.QMainWindow):
         QtGui.QMainWindow.__init__(self)
 
         self.resize(1200, 650)
-        self.setWindowTitle(u"Gestion du poulailer")
+        self.setWindowTitle(u"Management chicken coop")
         self.setWindowIcon(QtGui.QIcon('images/eggs.ico'))
 
         self.toolbar2 = QtGui.QToolBar()
@@ -53,7 +51,7 @@ class MainWindow(QtGui.QMainWindow):
                                                 self.goto_chiks)
 
         self.toolbar.addSeparator()
-        self.toolbar.addAction(_(u"Suivi chiks"), \
+        self.toolbar.addAction(_(u"Monitoring chiks"), \
                                                 self.goto__suivi_chiks)
         self.addToolBar(self.toolbar)
 
@@ -88,7 +86,7 @@ class MainWindow(QtGui.QMainWindow):
         self.change_context(ShowAlViewWidget)
         
     def accueil(self):
-        self.setWindowTitle(u"Accueil")
+        self.setWindowTitle(u"Home")
         self.change_context(DashbordViewWidget)
 
     def goto_produit(self):
@@ -104,7 +102,7 @@ class MainWindow(QtGui.QMainWindow):
         self.change_context(ChiksViewWidget)
 
     def goto__suivi_chiks(self):
-        self.setWindowTitle(_(u"Suivi chiks"))
+        self.setWindowTitle(_(u"Monitoring chiks"))
         self.change_context(PsRapportViewWidget)
 
     def goto_chickencoop(self):
