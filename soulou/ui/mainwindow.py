@@ -18,6 +18,7 @@ from data_helper import alerte
 from showalerte import ShowAlViewWidget
 
 
+
 class MainWindow(QtGui.QMainWindow):
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
@@ -83,7 +84,7 @@ class MainWindow(QtGui.QMainWindow):
     def goto_alerte(self):
         self.setWindowTitle(u"Show alert")
         self.change_context(ShowAlViewWidget)
-        
+
     def accueil(self):
         self.setWindowTitle(u"Home")
         self.change_context(DashbordViewWidget)
