@@ -9,6 +9,7 @@ from magasins import MagasinViewWidget
 from report_period import ReportViewWidget
 from exports import export_database_as_file
 from alerteview import AlertViewWidget
+from transfert import TransferttViewWidget
 
 
 class MenuBar(QtGui.QMenuBar, F_Widget):
@@ -63,6 +64,13 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
                                             self.goto_inventaire)
         goto_.addAction(rap_inv)
 
+        # Transfert
+        transfert = QtGui.QAction(_(u"Transfert"), self)
+        transfert.setShortcut("Ctrl+M")
+        self.connect(transfert, QtCore.SIGNAL("triggered()"),
+                                            self.goto__transfert_chiks)
+        goto_.addAction(transfert)
+
         #Menu Aide
         help_ = self.addMenu(_(u"help"))
         help_.addAction(QtGui.QIcon('images/help.png'), _("help"),
@@ -81,6 +89,9 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
     #Rapport periodique.
     def report_period(self):
          self.change_main_context(ReportViewWidget)
+
+    def goto__transfert_chiks(self):
+        self.change_main_context(TransferttViewWidget)
 
     def addstore(self):
         self.change_main_context(MagasinViewWidget)

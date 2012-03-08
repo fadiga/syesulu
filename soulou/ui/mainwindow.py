@@ -18,6 +18,7 @@ from data_helper import alerte
 from showalerte import ShowAlViewWidget
 
 
+
 class MainWindow(QtGui.QMainWindow):
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
@@ -73,7 +74,7 @@ class MainWindow(QtGui.QMainWindow):
         al = alerte()
         if len(al) != 0:
             self.toolbar2.addAction(QtGui.QIcon('images/war.png'),
-                                    str([i.objets for i in al]), 
+                                    str([i.objets for i in al]),
                                     self.goto_alerte)
             self.addToolBar(QtCore.Qt.LeftToolBarArea, self.toolbar2)
         self.alerte = alerte()
@@ -84,7 +85,7 @@ class MainWindow(QtGui.QMainWindow):
     def goto_alerte(self):
         self.setWindowTitle(u"Show alert")
         self.change_context(ShowAlViewWidget)
-        
+
     def accueil(self):
         self.setWindowTitle(u"Home")
         self.change_context(DashbordViewWidget)
