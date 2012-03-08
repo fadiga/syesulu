@@ -62,7 +62,6 @@ class AlertTableWidget(F_TableWidget):
         self.refresh()
 
     def set_data_for(self):
-
         self.data = [(al.objets, al.date_a, al.status) \
                                                   for al in Alerte.all()]
 

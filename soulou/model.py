@@ -20,6 +20,7 @@ class BaseModel(peewee.Model):
     def all(cls):
         return list(cls.select())
 
+
 class Magasin(BaseModel):
     name = peewee.CharField(max_length=100)
     qte_maxi_stok = peewee.IntegerField(default=0)
@@ -102,11 +103,12 @@ class StockRapport(BaseModel):
         if next_reports:
             next_reports.save()
 
+
 class Alerte(BaseModel):
     """docstring for Alerte"""
 
     objets = peewee.TextField()
-    date_a = peewee.DateTimeField(default=datetime.now())
+    date_a = peewee.DateTimeField(default=datetime.today())
     status = peewee.BooleanField(default=True)
 
     def __unicode__(self):

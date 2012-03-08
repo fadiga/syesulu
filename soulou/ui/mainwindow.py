@@ -74,7 +74,7 @@ class MainWindow(QtGui.QMainWindow):
         al, c = alerte()
         if len(al) != 0:
             self.toolbar2.addAction(QtGui.QIcon('images/war.png'),
-                                    al, self.goto_alerte)
+                                    c, self.goto_alerte)
             self.addToolBar(QtCore.Qt.LeftToolBarArea, self.toolbar2)
         self.alerte, c = alerte()
 

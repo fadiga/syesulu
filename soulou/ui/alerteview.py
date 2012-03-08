@@ -2,6 +2,8 @@
 # encoding=utf-8
 # maintainer: Fadiga
 
+from datetime import datetime
+
 from PyQt4 import QtGui
 from PyQt4 import QtCore
 
@@ -9,7 +11,7 @@ from common import (F_Widget, F_BoxTitle, Button_save,
                     FormatDate, FormLabel)
 from util import raise_success
 from model import Alerte
-from data_helper import format_date
+
 
 class AlertViewWidget(QtGui.QDialog, F_Widget):
     def __init__(self, parent, *args, **kwargs):
@@ -43,9 +45,16 @@ class AlertViewWidget(QtGui.QDialog, F_Widget):
         self.close()
 
     def save_alerte(self):
+
+        date_a = self.date_a.text()
+        day, month, year = date_a.split('/')
+        dt = datetime.now()
+        datetime_ = datetime(int(year), int(month), int(day),
+                             int(dt.hour), int(dt.minute), int(dt.second),
+                             int(dt.microsecond))
         alt = Alerte()
         alt.objets = unicode(self.objets.toPlainText())
-        alt.date_a = format_date(self.date_a.text())
+        alt.date_a = datetime_
         alt.save()
  
         self.cancel()
