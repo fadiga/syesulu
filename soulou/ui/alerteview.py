@@ -19,8 +19,7 @@ class AlertViewWidget(QtGui.QDialog, F_Widget):
         vbox = QtGui.QVBoxLayout()
         vbox.addWidget(F_BoxTitle(_(u"Create Alert")))
         self.objets = QtGui.QTextEdit()
-        self.on_date = FormatDate(QtCore.QDate.currentDate())
-        self.end_date = FormatDate(QtCore.QDate.currentDate())
+        self.date_a = FormatDate(QtCore.QDate.currentDate())
 
         vbox = QtGui.QVBoxLayout()
         # Grid
@@ -28,9 +27,7 @@ class AlertViewWidget(QtGui.QDialog, F_Widget):
         gridbox.addWidget(FormLabel(_(u"Objets")), 0, 0)
         gridbox.addWidget(self.objets, 0, 1)
         gridbox.addWidget(FormLabel(_(u"On date")), 1, 0)
-        gridbox.addWidget(self.on_date, 1, 1)
-        gridbox.addWidget(FormLabel(_(u"End date")), 2, 0)
-        gridbox.addWidget(self.end_date, 2, 1)
+        gridbox.addWidget(self.date_a, 1, 1)
         gridbox.setColumnStretch(3, 3)
         butt = Button_save(_(u"Records the change"))
         butt.clicked.connect(self.save_alerte)
@@ -41,15 +38,15 @@ class AlertViewWidget(QtGui.QDialog, F_Widget):
 
         vbox.addLayout(gridbox)
         self.setLayout(vbox)
+
     def cancel(self):
         self.close()
 
     def save_alerte(self):
         alt = Alerte()
         alt.objets = unicode(self.objets.toPlainText())
-        alt.end_date = format_date(self.end_date.text())
-        alt.on_date = format_date(self.on_date.text())
+        alt.date_a = format_date(self.date_a.text())
         alt.save()
-
+ 
         self.cancel()
         raise_success(_(u"Confirmation"), _(u"The store has been changing"))

@@ -53,7 +53,7 @@ class AlTableWidget(F_TableWidget):
 
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
 
-        self.header = [_(u"Executer"), _(u"objets"), _(u"date de fin"), ""]
+        self.header = [_(u"Executer"), _(u"objets"), _(u"date d'alerte"), ""]
 
         self.set_data_for()
         self.refresh(True)
@@ -78,5 +78,5 @@ class AlTableWidget(F_TableWidget):
 
 
     def set_data_for(self, *args):
-
-        self.data = [("", al.objets, al.date_fin, al.id) for al in alerte()]
+        alert, c = alerte()
+        self.data = [("", al.objets, al.date_a, al.id) for al in alert]

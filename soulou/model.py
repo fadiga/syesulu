@@ -106,13 +106,12 @@ class Alerte(BaseModel):
     """docstring for Alerte"""
 
     objets = peewee.TextField()
-    date_debut = peewee.DateTimeField(default=datetime.today())
-    date_fin = peewee.DateTimeField(default=datetime.today())
+    date_a = peewee.DateTimeField(default=datetime.now())
     status = peewee.BooleanField(default=True)
 
     def __unicode__(self):
-        return (u"%(alerte)s %(status)s") % {u'alerte': self.objets,
-                u'status': self.status}
+        return (u"%(alerte)s %(date_a)s") % {u'alerte': self.objets,
+                u'date_a': self.date_a}
 
 
 class ChickenCoop(BaseModel):

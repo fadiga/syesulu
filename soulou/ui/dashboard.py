@@ -51,8 +51,7 @@ class AlertTableWidget(F_TableWidget):
 
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
-        self.header = [_(u"Objets"), _(u"Start date"), _('End date')
-                      , _('Status')]
+        self.header = [_(u"Objets"), _(u"Date d'alerte"), _('Status')]
         self.set_data_for()
         self.refresh(True)
 
@@ -64,18 +63,16 @@ class AlertTableWidget(F_TableWidget):
 
     def set_data_for(self):
 
-        self.data = [(al.objets, al.date_debut.strftime(u'%x %Hh:%Mmn'),
-                      al.date_fin.strftime(u'%x %Hh:%Mmn'), al.status)
-                                                    for al in Alerte.all()]
+        self.data = [(al.objets, al.date_a, al.status) \
+                                                  for al in Alerte.all()]
 
     def _item_for_data(self, row, column, data, context=None):
-        if column == 3 and self.data[row][3] == 0:
+        if column == 2 and self.data[row][2] == 0:
             return QtGui.QTableWidgetItem(QtGui.QIcon("images/tick.ico"),
                                                       u"")
-        if column == 3 and self.data[row][3] == 1:
+        if column == 2 and self.data[row][2] == 1:
             return QtGui.QTableWidgetItem(QtGui.QIcon("images/star.ico"),
                                                       u"")
 
-        return super(AlertTableWidget, self)\
-                                            ._item_for_data(row, column, \
-                                                        data, context)
+        return super(AlertTableWidget, self)._item_for_data(row, column,
+                                                            data, context)
