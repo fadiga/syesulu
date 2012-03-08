@@ -124,10 +124,16 @@ class ChickenCoop(BaseModel):
     TYPE= ((TYPE_POUL, u"Poulailler"),
                 (TYPE_POUS, u"Poussinière"),)
 
+    EMPTY = 0 # blank created
+    OCCUPY = 1 # started edition
+    STATUS = ((EMPTY, u"Vide"),
+                (OCCUPY, u"Occuper"),)
+
     type_ = peewee.IntegerField(default=TYPE_POUS)
     num = peewee.IntegerField(default=0)
     nbr_sujet_maxi = peewee.IntegerField(default=0)
     date = peewee.DateTimeField(default=datetime.now())
+    status = peewee.IntegerField(default=EMPTY)
 
     def __unicode__(self):
         return (u"%(type_)s %(num)s") % \
@@ -141,10 +147,18 @@ class ChickenCoop(BaseModel):
 class PsArrivage(BaseModel):
     """docstring for PsArrivage"""
 
+    NEW = 0 # blank created
+    TRANSFERE = 1 # started edition
+    REFORME = 2 # started edition
+    STATUS = ((NEW, u"Nouveau"),
+              (TRANSFERE, u"Transfere"),
+              (REFORME, u"Reforme"),)
+
     race = peewee.CharField(max_length=50)
     nb_total_chiks = peewee.IntegerField(default=0)
     arrival_date = peewee.DateTimeField(default=datetime.now())
     chicken_coop = peewee.ForeignKeyField(ChickenCoop)
+    status = peewee.IntegerField(default=NEW)
 
     def __unicode__(self):
         return (u"%(nb_total_chiks)s %(arrival_date)s") % \
