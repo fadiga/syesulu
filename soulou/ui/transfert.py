@@ -42,16 +42,24 @@ class TransferttViewWidget(F_Widget):
             sentence = _(u"%(full_name)s") % {'full_name': op.full_name()}
             self.chicken_coop.addItem(sentence, QtCore.QVariant(op.id))
 
+        #Combobox widget
+        self.list_transfert = ['Nouveau', 'Transfert', 'Reforme']
+        self.transfert = QtGui.QComboBox()
+        for index in self.list_transfert:
+                self.transfert.addItem(u'%(type)s' % {'type': index})
+
         butt = Button_save(_(u"Tranfert"))
         editbox.addWidget(QtGui.QLabel((_(u"Date"))), 0, 0)
         editbox.addWidget(self.date_transfert, 1, 0)
         editbox.addWidget(QtGui.QLabel((_(u"Chicken coop"))), 0, 1)
         editbox.addWidget(self.chicken_coop, 1, 1)
-        editbox.addWidget(QtGui.QLabel((_(u"Number of chiks"))), 0, 2)
-        editbox.addWidget(self.nb_chiks, 1, 2)
-        editbox.addWidget(QtGui.QLabel((_(u"Nombre"))), 0, 3)
-        editbox.addWidget(self.num, 1, 3)
-        editbox.addWidget(butt, 1, 4)
+        editbox.addWidget(QtGui.QLabel((_(u"Status"))), 0, 2)
+        editbox.addWidget(self.transfert, 1, 2)
+        editbox.addWidget(QtGui.QLabel((_(u"Number of chiks"))), 0, 3)
+        editbox.addWidget(self.nb_chiks, 1, 3)
+        editbox.addWidget(QtGui.QLabel((_(u"Nombre"))), 0, 4)
+        editbox.addWidget(self.num, 1, 4)
+        editbox.addWidget(butt, 1, 5)
 
         butt.clicked.connect(self.add_chiks)
 
@@ -74,11 +82,12 @@ class TransferttViewWidget(F_Widget):
                              int(dt.microsecond))
 
         if unicode(self.nb_chiks.text()) != "":
-            ps = PsRapport()
-            ps.nb_chiks = int(self.nb_chiks.text())
-            ps.num = int(self.num.text())
-            ps.date_transfert = datetime_
-            ps.psarrivage = chicken_coop.id
+            ps = PsArrivage()
+            ps.race = int(self.nb_chiks.text())
+            ps.nb_total_chiks = int(self.num.text())
+            ps.arrival_date = datetime_
+            ps.chicken_coop = chicken_coop.id
+            ps.status = chicken_coop.id
             ps.save()
             self.nb_chiks.clear()
             self.nb_eggs.clear()

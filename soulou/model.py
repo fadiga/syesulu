@@ -151,7 +151,7 @@ class PsArrivage(BaseModel):
     TRANSFERE = 1 # started edition
     REFORME = 2 # started edition
     STATUS = ((NEW, u"Nouveau"),
-              (TRANSFERE, u"Transfere"),
+              (TRANSFERE, u"Transfert"),
               (REFORME, u"Reforme"),)
 
     race = peewee.CharField(max_length=50)
