@@ -63,7 +63,7 @@ class MainWindow(QtGui.QMainWindow):
 
         self.change_context(DashbordViewWidget)
 
-        self.startTimer(5000)
+        self.startTimer(10000)
 
     def timerEvent(self, event):
         al, c = alerte()
@@ -83,7 +83,7 @@ class MainWindow(QtGui.QMainWindow):
 
     def goto_alerte(self):
         self.setWindowTitle(u"Show alert")
-        self.change_context(ShowAlViewWidget)
+        self.open_dialog(ShowAlViewWidget)
 
     def accueil(self):
         self.setWindowTitle(u"Home")

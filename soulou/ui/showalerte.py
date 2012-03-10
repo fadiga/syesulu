@@ -9,6 +9,7 @@ from common import (F_Widget, F_BoxTitle, Button, Button_save,
                     F_TableWidget)
 from data_helper import alerte
 from model import Alerte
+from dashboard import DashbordViewWidget
 
 
 class ShowAlViewWidget(QtGui.QDialog, F_Widget):
@@ -65,7 +66,6 @@ class AlTableWidget(F_TableWidget):
             return editor
         return super(AlTableWidget, self) \
                      ._item_for_data(row, column, data, context)
-
 
     def saveTableItems(self):
         n = self.rowCount()
