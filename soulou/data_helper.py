@@ -12,7 +12,7 @@ def format_date(dat):
     return '-'.join([year, month, day])
  
 def alerte():
-    list_al , msg = [], "Il vous reste que "
+    list_al , msg = [], ""
     min_nbr_day = 0
     max_nbr_day = 4
     try:
@@ -25,7 +25,7 @@ def alerte():
             dat = (al.date_a - datetime.now()).days
             if dat <= max_nbr_day and dat >= min_nbr_day:
                 list_al.append(al)  
-                msg += "%d jr(s) pour faire: %s " % (dat, al.objets)
+                msg += "%d jr(s) pour: %s " % (dat, al.objets)
 
     return list_al, msg
 
@@ -61,7 +61,6 @@ def save_al(list_):
         al.date_a = el[1]
         al.status = True
         al.save()
-    print Alerte.all()
 
 def make_date(nbr_week):
     """return une date"""

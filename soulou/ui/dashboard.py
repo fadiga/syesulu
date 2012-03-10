@@ -44,14 +44,28 @@ class DashbordViewWidget(F_Widget):
         
 
 class EtatTableWidget(F_TableWidget):
-    pass
+    def __init__(self, parent, *args, **kwargs):
+        F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
+        self.header = [_(u""), _(u""), _("")]
+        self.set_data_for()
+        self.refresh(True)
+
+    def refresh_(self):
+        """ """
+        self._reset()
+        self.set_data_for()
+        self.refresh()
+
+    def set_data_for(self):
+        self.data = [(al.objets, al.date_a, al.status) \
+                                                  for al in Alerte.all()]
 
 
 class AlertTableWidget(F_TableWidget):
 
     def __init__(self, parent, *args, **kwargs):
         F_TableWidget.__init__(self, parent=parent, *args, **kwargs)
-        self.header = [_(u"Objets"), _(u"Date d'alerte"), _('Status')]
+        self.header = [_(u"Objets"), _(u"Date d'alerte"), _("Status")]
         self.set_data_for()
         self.refresh(True)
 

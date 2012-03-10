@@ -25,7 +25,9 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
         # Export
         export = file_.addMenu(_(u"&Export data"))
 
-        export.addAction(_(u"Backup Database"), self.goto_export_db)
+        export.addAction(QtGui.QIcon('images/db_save.png'),
+                         _(u"Backup Database"),
+                         self.goto_export_db)
 
         # Exit
         exit_ = QtGui.QAction(_(u"Exit"), self)

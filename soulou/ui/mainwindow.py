@@ -30,7 +30,6 @@ class MainWindow(QtGui.QMainWindow):
         self.update()
         self.toolbar = QtGui.QToolBar()
         self.toolbar.setEnabled(True)
-        self.toolbar.setOrientation(QtCore.Qt.Vertical)
         self.toolbar.addAction(QtGui.QIcon('images/quiter.png'), \
                                                     _(u"Exit"), self.goto_exit)
         self.toolbar.addSeparator()

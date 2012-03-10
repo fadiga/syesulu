@@ -7,7 +7,7 @@ import peewee
 from datetime import date, datetime
 
 
-DB_FILE = 'poulailler_base.db'
+DB_FILE = 'db_chicken.db'
 dbh = peewee.SqliteDatabase(DB_FILE)
 
 
