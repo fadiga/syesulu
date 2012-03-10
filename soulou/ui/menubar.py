@@ -10,6 +10,9 @@ from report_period import ReportViewWidget
 from exports import export_database_as_file
 from alerteview import AlertViewWidget
 from transfert import TransferttViewWidget
+from produits import ProduitViewWidget
+from chiks import ChiksViewWidget
+from chickencoop import ChickenCoopViewWidget
 
 
 class MenuBar(QtGui.QMenuBar, F_Widget):
@@ -36,12 +39,37 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
         # Menu aller à
         goto_ = self.addMenu(_(u"&Go to"))
 
+        #Gestion des stocks
+        stock = goto_.addMenu(_(u"&Gestion de store"))
+
         # magasin
         store = QtGui.QAction(_(u"New store"), self)
         store.setShortcut("Ctrl+M")
         self.connect(store, QtCore.SIGNAL("triggered()"),
-                                            self.addstore)
-        goto_.addAction(store)
+                                            self.goto_store)
+        stock.addAction(store)
+        # Produit
+        Product = QtGui.QAction(_(u"New Product"), self)
+        Product.setShortcut("Ctrl+S")
+        self.connect(Product, QtCore.SIGNAL("triggered()"),
+                                            self.goto_product)
+        stock.addAction(Product)
+
+        #Gestion des suivis
+        followed = goto_.addMenu(_(u"&Followed"))
+
+        # Poussinière
+        Chiks = QtGui.QAction(_(u"New Chiks"), self)
+        Chiks.setShortcut("Ctrl+C")
+        self.connect(Chiks, QtCore.SIGNAL("triggered()"),
+                                            self.goto_chiks)
+        followed.addAction(Chiks)
+        # Poulailler
+        chickencoop = QtGui.QAction(_(u"New chickencoop"), self)
+        chickencoop.setShortcut("Ctrl+E")
+        self.connect(chickencoop, QtCore.SIGNAL("triggered()"),
+                                            self.goto_chickencoop)
+        followed.addAction(chickencoop)
 
         # alerte
         alerte = QtGui.QAction(_(u"Add alert"), self)
@@ -93,8 +121,18 @@ class MenuBar(QtGui.QMenuBar, F_Widget):
     def goto__transfert_chiks(self):
         self.change_main_context(TransferttViewWidget)
 
-    def addstore(self):
+    def goto_store(self):
         self.change_main_context(MagasinViewWidget)
+
+    #Produit
+    def goto_product(self):
+        self.change_main_context(ProduitViewWidget)
+
+    def goto_chiks(self):
+        self.change_main_context(ChiksViewWidget)
+
+    def goto_chickencoop(self):
+        self.change_main_context(ChickenCoopViewWidget)
 
     #Export the database.
     def goto_export_db(self):

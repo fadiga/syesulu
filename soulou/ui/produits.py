@@ -34,7 +34,6 @@ class ProduitViewWidget(F_Widget):
 
         formbox = QtGui.QVBoxLayout()
         editbox = QtGui.QGridLayout()
-        formbox.addWidget(F_BoxTitle(_(u"Add product")))
 
         editbox.addWidget(QtGui.QLabel((_(u"Designation"))), 0, 0)
         editbox.addWidget(self.libelle, 1, 0)

@@ -2,16 +2,12 @@
 # encoding=utf-8
 # maintainer: Fadiga
 
-import sys
 
 from PyQt4 import QtGui, QtCore
 
 from gstockreports import G_reportViewWidget
 from dashboard import DashbordViewWidget
-from produits import ProduitViewWidget
-from chiks import ChiksViewWidget
 from monitoring_chicks import PsRapportViewWidget
-from chickencoop import ChickenCoopViewWidget
 from menubar import MenuBar
 from statusbar import GStatusBar
 from data_helper import alerte
@@ -40,17 +36,8 @@ class MainWindow(QtGui.QMainWindow):
         self.toolbar.addSeparator()
         self.toolbar.addAction(_(u"Dashboard"), self.accueil)
         self.toolbar.addSeparator()
-        self.toolbar.addAction(_(u"Produit"), self.goto_produit)
-        self.toolbar.addSeparator()
         self.toolbar.addAction(_(u"Management reports"), \
                                                 self.goto_gestion_rapport)
-        self.toolbar.addSeparator()
-        self.toolbar.addAction(_(u"New chicken coop"), \
-                                                self.goto_chickencoop)
-        self.toolbar.addSeparator()
-        self.toolbar.addAction(_(u"News chiks"), \
-                                                self.goto_chiks)
-
         self.toolbar.addSeparator()
         self.toolbar.addAction(_(u"Monitoring chiks"), \
                                                 self.goto__suivi_chiks)
@@ -89,25 +76,13 @@ class MainWindow(QtGui.QMainWindow):
         self.setWindowTitle(u"Home")
         self.change_context(DashbordViewWidget)
 
-    def goto_produit(self):
-        self.setWindowTitle(_(u"Products"))
-        self.change_context(ProduitViewWidget)
-
     def goto_gestion_rapport(self):
         self.setWindowTitle(_(u"Management Reports"))
         self.change_context(G_reportViewWidget)
 
-    def goto_chiks(self):
-        self.setWindowTitle(_(u"Management chiks"))
-        self.change_context(ChiksViewWidget)
-
     def goto__suivi_chiks(self):
         self.setWindowTitle(_(u"Monitoring chiks"))
         self.change_context(PsRapportViewWidget)
-
-    def goto_chickencoop(self):
-        self.setWindowTitle(_(u"Management Chicken Coop"))
-        self.change_context(ChickenCoopViewWidget)
 
 
     def change_context(self, context_widget, *args, **kwargs):
