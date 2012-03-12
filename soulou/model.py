@@ -157,7 +157,7 @@ class PsArrivage(BaseModel):
     race = peewee.CharField(max_length=50)
     nb_total_chiks = peewee.IntegerField(default=0)
     arrival_date = peewee.DateTimeField(default=datetime.now())
-    chicken_coop = peewee.ForeignKeyField(ChickenCoop)
+    chicken_coop = peewee.ForeignKeyField(ChickenCoop, related_name='chicken_coops')
     status = peewee.IntegerField(default=NEW)
 
     def __unicode__(self):
@@ -169,7 +169,7 @@ class PsArrivage(BaseModel):
 class PsRapport(BaseModel):
     """docstring for PsPoulalle"""
 
-    psarrivage = peewee.ForeignKeyField(PsArrivage)
+    psarrivage = peewee.ForeignKeyField(PsArrivage, related_name='psarrivages')
     nb_death = peewee.IntegerField(default=0)
     remaining = peewee.IntegerField(default=0)
     nb_eggs = peewee.IntegerField(default=0)
@@ -184,7 +184,8 @@ class PsRapport(BaseModel):
             last_reports = PsRapport.filter(psarrivage__chicken_coop_id= \
                            self.psarrivage).order_by(('date_report', 'desc'))
         except:
-            raise_error(_("Error"), _(u"Give the number of the death"))
+            raise_error(_("Error"), _(u"Ce poulailler est vide"))
+            return False
         previous_remaining = 0
         self.remaining = 0
         try:

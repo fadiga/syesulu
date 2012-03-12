@@ -78,14 +78,22 @@ class ChiksViewWidget(F_Widget):
                 raise_error(_("Error"), _(u"%s can take only %s chicks") \
                     % (chicken_coop.full_name(), chicken_coop.nbr_sujet_maxi))
             else:
-                ps = PsArrivage()
-                ps.race = unicode(self.race.text())
-                ps.nb_total_chiks = int(self.nb_total_chiks.text())
-                ps.arrival_date = datetime_
-                ps.chicken_coop = chicken_coop
-                ps.save()
-                self.chiks_table.refresh_()
-                raise_success(_(u"Confirmation"), _(u"Registered operation"))
+                if chicken_coop.status == 1:
+                    raise_error(_("Error"), _(u"%s est occupée") \
+                    % (chicken_coop.full_name()))
+                else:
+                    ps = PsArrivage()
+                    ps.race = unicode(self.race.text())
+                    ps.nb_total_chiks = int(self.nb_total_chiks.text())
+                    ps.arrival_date = datetime_
+                    ps.chicken_coop = chicken_coop
+                    ps.chicken_coop.status = 1
+                    chicken_coop.save()
+                    ps.save()
+                    self.nb_total_chiks.clear()
+                    self.race.clear()
+                    self.chiks_table.refresh_()
+                    raise_success(_(u"Confirmation"), _(u"Registered operation"))
         else:
             raise_error(_("Error"), _(u"Give the number of the chiks"))
 

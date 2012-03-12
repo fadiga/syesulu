@@ -80,6 +80,8 @@ class ChickenCoopViewWidget(F_Widget):
             poussin.nbr_sujet_maxi = int(self.nbr_sujet_maxi.text())
             poussin.date = datetime_
             poussin.save()
+            self.num.clear()
+            self.nbr_sujet_maxi.clear()
             self.poussin_table.refresh_()
             raise_success(_(u"Confirmation"), _(u"Registered operation"))
         else:
